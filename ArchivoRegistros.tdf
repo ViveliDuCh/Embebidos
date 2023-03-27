@@ -1,0 +1,120 @@
+FUNCTION RegUnivEn(Reloj, Reset, Dato[7..0], Cmd [2..0], Enable)
+	RETURNS (Salida[7..0]);
+
+
+FUNCTION RegLoad(Reloj, Reset, Dato[7..0], Load, Enable)
+	RETURNS (Salida[7..0]);
+	
+FUNCTION ALU (in_x[7..0], in_y[7..0]  )
+	RETURNS (R[7..0] );
+
+
+SUBDESIGN ArchivoRegistros(
+	Reloj, Reset, Fx[7..0], SelBus[4..0], Cmd[2..0], DST[4..0], SRC[4..0] : INPUT;
+	Ax_t[7..0], Bx_t[7..0],x_t[7..0],y_t[7..0],r_t[7..0], Bus_t[7..0]: OUTPUT;
+)
+
+VARIABLE
+BUS[7..0] : NODE;
+
+Ax : RegUnivEn;
+Bx : RegUnivEn;
+
+alu_x : RegLoad;
+alu_y : RegLoad;
+alu_r : RegLoad;
+
+ALU_prueba : ALU;
+
+
+BEGIN
+
+
+	Ax.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
+	Bx.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
+	
+	alu_x.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
+	alu_y.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
+	alu_r.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
+	
+	ALU_prueba.(in_x[7..0], in_y[7..0] ) = (alu_x.Salida,alu_y.Salida);
+	
+	alu_r.Dato = alu_x.Salida[] + alu_y.Salida[]+5;
+	alu_r.Enable = VCC;
+	alu_r.Load = VCC;
+			
+	Ax_t[] = Ax.Salida[];
+	Bx_t[] = Bx.Salida[];
+	x_t[] = alu_x.Salida[];
+	y_t[] = alu_y.Salida[];
+	r_t[] = alu_r.Salida[];
+	Bus_t[] = BUS[];
+	
+	
+	CASE SelBus[] IS
+		WHEN 0 =>
+			BUS[] = Ax.Salida[];
+	
+		WHEN 1 =>
+			BUS[] = Bx.Salida[];
+			
+		WHEN 5 =>
+			BUS[] = Fx[];
+			
+		WHEN 8 =>
+			BUS[] = alu_r.Salida[];
+			
+	END CASE;
+	
+	CASE DST[] IS
+		WHEN 0 =>
+			Ax.Enable = VCC;
+			Bx.Enable = GND;
+			alu_x.Enable = GND;
+			alu_x.Load = GND;
+			alu_y.Enable = GND;
+			alu_y.Load = GND;
+
+	
+		WHEN 1 =>
+			Ax.Enable = GND;
+			Bx.Enable = VCC;
+			alu_x.Enable = GND;
+			alu_y.Enable = GND;
+			
+			alu_x.Load = GND;
+			alu_y.Load = GND;
+			
+		WHEN 6 =>
+			Ax.Enable = GND;
+			Bx.Enable = GND;
+			alu_x.Enable = VCC;
+			alu_x.Load = VCC;
+			alu_y.Enable = GND;
+			
+			alu_y.Load = GND;
+
+			
+		WHEN 7 =>
+			Ax.Enable = GND;
+			Bx.Enable = GND;
+			alu_x.Enable = GND;
+			alu_x.Load = GND;
+			
+			alu_y.Enable = VCC;
+			alu_y.Load = VCC;
+			
+			
+		WHEN 8 =>
+			Ax.Enable = GND;
+			Bx.Enable = GND;
+			alu_x.Enable = GND;
+			alu_y.Enable = GND;
+			
+			alu_x.Load = GND;
+			alu_y.Load = GND;
+			
+	END CASE;
+	
+
+END;

@@ -1,0 +1,165 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Proyectos/SISTEMAS EMBEBIDOS/ArchivoRegistros/simulation/qsim
+Earchivoregistros
+Z1 w1679685856
+Z2 DPx11 fiftyfivenm 21 fiftyfivenm_atom_pack 0 22 7d5Xo;QBOkc31OfQTzSXV0
+Z3 DPx11 fiftyfivenm 22 fiftyfivenm_components 0 22 IfY7Mh2WPBc;@7U@3<I^[0
+Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z5 DPx6 altera 11 dffeas_pack 0 22 :S1C`o89Vbe5bV6`:6CaB3
+Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z9 DPx6 altera 28 altera_primitives_components 0 22 z?[99Tn<@QGNik3V1c6ah1
+R0
+Z10 8ArchivoRegistros.vho
+Z11 FArchivoRegistros.vho
+l0
+L90
+V=I:6A`R_]E1dh5@9lindz0
+!s100 EDEXZG:mR;SWF6X?]]DHA2
+Z12 OV;C;10.5b;63
+32
+Z13 !s110 1679685857
+!i10b 1
+Z14 !s108 1679685857.000000
+Z15 !s90 -work|work|ArchivoRegistros.vho|
+Z16 !s107 ArchivoRegistros.vho|
+!i113 1
+Z17 o-work work
+Z18 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 16 archivoregistros 0 22 =I:6A`R_]E1dh5@9lindz0
+l501
+L187
+Vc<3@I]bg?zOX9I1l2NI?[0
+!s100 o2[fPkaZnfHz0MCK15QD82
+R12
+32
+R13
+!i10b 1
+R14
+R15
+R16
+!i113 1
+R17
+R18
+vArchivoRegistros
+Z19 !s110 1679896551
+!i10b 1
+!s100 5PO3=1@BW5RUhSzLi]KN=2
+ICnoF0k>nSQ4Bm2D0XjdoE0
+Z20 VDg1SIo80bB@j0V0VzS_@n1
+Z21 dD:/Embebidos/Quartus Programs/ArchivoRegistros2/simulation/qsim
+Z22 w1679896550
+Z23 8ArchivoRegistros.vo
+Z24 FArchivoRegistros.vo
+L0 31
+Z25 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z26 !s108 1679896551.000000
+Z27 !s107 ArchivoRegistros.vo|
+Z28 !s90 -work|work|ArchivoRegistros.vo|
+!i113 1
+R17
+Z29 tCvgOpt 0
+n@archivo@registros
+Earchivoregistros_vhd_vec_tst
+Z30 w1679685854
+R7
+R8
+R0
+Z31 8Waveform2.vwf.vht
+Z32 FWaveform2.vwf.vht
+l0
+L31
+VzJSineIWK@H]4cTNQ<HF^1
+!s100 a_neDEmJc[S<H=BLLdVeR0
+R12
+32
+R13
+!i10b 1
+R14
+Z33 !s90 -work|work|Waveform2.vwf.vht|
+Z34 !s107 Waveform2.vwf.vht|
+!i113 1
+R17
+R18
+Aarchivoregistros_arch
+R7
+R8
+DEx4 work 28 archivoregistros_vhd_vec_tst 0 22 zJSineIWK@H]4cTNQ<HF^1
+l66
+L33
+V>XO7hzC9gY9WE9W1nXLOV1
+!s100 DEnkE^bd1Kd7eABHYSSCH0
+R12
+32
+R13
+!i10b 1
+R14
+R33
+R34
+!i113 1
+R17
+R18
+vArchivoRegistros_vlg_vec_tst
+R19
+!i10b 1
+!s100 Zcidb6jl>8892<Y4VKkD91
+IfS[7QAnc=BEFmR>CY@Zbe1
+R20
+R21
+w1679896549
+8Waveform5.vwf.vt
+FWaveform5.vwf.vt
+L0 29
+R25
+r1
+!s85 0
+31
+R26
+!s107 Waveform5.vwf.vt|
+!s90 -work|work|Waveform5.vwf.vt|
+!i113 1
+R17
+R29
+n@archivo@registros_vlg_vec_tst
+vhard_block
+R19
+!i10b 1
+!s100 _SPYFTMJPO<UCjnLMWJ@]1
+I2onBAb9^358_[5g0hkZF31
+R20
+R21
+R22
+R23
+R24
+L0 5127
+R25
+r1
+!s85 0
+31
+R26
+R27
+R28
+!i113 1
+R17
+R29

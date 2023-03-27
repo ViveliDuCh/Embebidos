@@ -1,0 +1,293 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Ax_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Ax_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Ax_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Ax_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Ax_t[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Ax_t[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Ax_t[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Ax_t[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Bx_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Bx_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Bx_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Bx_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Bx_t[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Bx_t[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Bx_t[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Bx_t[7]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[4]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[5]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[6]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[7]",
+					"strict" : false
+				},
+				{
+					"name" : "y_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "y_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "y_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "y_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "y_t[4]",
+					"strict" : false
+				},
+				{
+					"name" : "y_t[5]",
+					"strict" : false
+				},
+				{
+					"name" : "y_t[6]",
+					"strict" : false
+				},
+				{
+					"name" : "y_t[7]",
+					"strict" : false
+				},
+				{
+					"name" : "r_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "r_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "r_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "r_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "r_t[4]",
+					"strict" : false
+				},
+				{
+					"name" : "r_t[5]",
+					"strict" : false
+				},
+				{
+					"name" : "r_t[6]",
+					"strict" : false
+				},
+				{
+					"name" : "r_t[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Bus_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Bus_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Bus_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Bus_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Bus_t[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Bus_t[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Bus_t[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Bus_t[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SelBus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SelBus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SelBus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SelBus[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SelBus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Fx[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Fx[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Fx[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Fx[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Fx[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Fx[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Fx[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Fx[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Cmd[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Cmd[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Cmd[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DST[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DST[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DST[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DST[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DST[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Reloj",
+					"strict" : false
+				},
+				{
+					"name" : "Reset",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

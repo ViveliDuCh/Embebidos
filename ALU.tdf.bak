@@ -1,0 +1,8 @@
+SUBDESIGN ALU(
+	x[7..0], y[7..0] : INPUT;
+	R[7..0] : OUTPUT;
+)
+
+BEGIN
+	R[] = x[] + y[];
+END;

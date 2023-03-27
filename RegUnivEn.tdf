@@ -1,0 +1,45 @@
+SUBDESIGN RegUnivEn(
+	Reloj, Reset, Dato[7..0], Cmd [2..0], Enable : INPUT;
+	Salida[7..0] : OUTPUT;
+)
+
+VARIABLE
+R[7..0] : DFF;
+
+BEGIN
+	
+	R[].(clk,clrn) = (Reloj,!Reset);
+	
+	IF (Enable == VCC) THEN
+	
+		CASE Cmd[] IS
+			WHEN 0 =>
+				R[] = R[];
+			WHEN 1 =>
+				R[] = Dato[];
+			WHEN 2 =>
+				R[] = R[] +1;
+			WHEN 3 =>
+				R[] = R[] -1;
+			WHEN 4 =>
+				R[7..1]=R[6..0];
+				R[0] = GND;
+			WHEN 5 =>
+				R[6..0]=R[7..1];
+				R[7] = GND;
+			WHEN 6 =>
+				R[7..1]=R[6..0];
+				R[0] = R[7];
+			WHEN 7 =>
+				R[6..0]=R[7..1];
+				R[7] = R[0];
+		END CASE;
+		
+	ELSE 
+		
+		R[].D = R[].Q;
+		
+	END IF;
+	
+	Salida[] = R[];
+END;
