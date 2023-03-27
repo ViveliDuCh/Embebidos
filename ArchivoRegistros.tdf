@@ -11,7 +11,7 @@ FUNCTION ALU (in_x[7..0], in_y[7..0]  )
 
 SUBDESIGN ArchivoRegistros(
 	Reloj, Reset, Fx[7..0], SelBus[4..0], Cmd[2..0], DST[4..0], SRC[4..0] : INPUT;
-	Ax_t[7..0], Bx_t[7..0],x_t[7..0],y_t[7..0],r_t[7..0], Bus_t[7..0]: OUTPUT;
+	Ax_t[7..0], Bx_t[7..0],Cx_t[7..0],x_t[7..0],y_t[7..0],r_t[7..0], Bus_t[7..0]: OUTPUT;
 )
 
 VARIABLE
@@ -19,6 +19,9 @@ BUS[7..0] : NODE;
 
 Ax : RegUnivEn;
 Bx : RegUnivEn;
+Cx : RegUnivEn;
+
+PC : RegUnivEn;
 
 alu_x : RegLoad;
 alu_y : RegLoad;
@@ -32,6 +35,7 @@ BEGIN
 
 	Ax.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
 	Bx.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
+	Cx.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
 	
 	alu_x.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
 	alu_y.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
@@ -45,18 +49,22 @@ BEGIN
 			
 	Ax_t[] = Ax.Salida[];
 	Bx_t[] = Bx.Salida[];
+	Cx_t[] = Bx.Salida[];
 	x_t[] = alu_x.Salida[];
 	y_t[] = alu_y.Salida[];
 	r_t[] = alu_r.Salida[];
 	Bus_t[] = BUS[];
 	
-	
+	--Selecciona valor del bus
 	CASE SelBus[] IS
 		WHEN 0 =>
 			BUS[] = Ax.Salida[];
 	
 		WHEN 1 =>
 			BUS[] = Bx.Salida[];
+		
+		WHEN 2 =>
+			BUS[] = Cx.Salida[];
 			
 		WHEN 5 =>
 			BUS[] = Fx[];
@@ -66,6 +74,7 @@ BEGIN
 			
 	END CASE;
 	
+	--Decoder de enables
 	CASE DST[] IS
 		WHEN 0 =>
 			Ax.Enable = VCC;
@@ -79,15 +88,27 @@ BEGIN
 		WHEN 1 =>
 			Ax.Enable = GND;
 			Bx.Enable = VCC;
+			Cx.Enable = GND;
 			alu_x.Enable = GND;
 			alu_y.Enable = GND;
 			
 			alu_x.Load = GND;
 			alu_y.Load = GND;
 			
+		WHEN 2 =>
+			Ax.Enable = GND;
+			Bx.Enable = GND;
+			Cx.Enable = VCC;
+			alu_x.Enable = GND;
+			alu_y.Enable = GND;
+			
+			alu_x.Load = GND;
+			alu_y.Load = GND;	
+			
 		WHEN 6 =>
 			Ax.Enable = GND;
 			Bx.Enable = GND;
+			Cx.Enable = GND;
 			alu_x.Enable = VCC;
 			alu_x.Load = VCC;
 			alu_y.Enable = GND;
@@ -98,6 +119,7 @@ BEGIN
 		WHEN 7 =>
 			Ax.Enable = GND;
 			Bx.Enable = GND;
+			Cx.Enable = GND;
 			alu_x.Enable = GND;
 			alu_x.Load = GND;
 			
@@ -108,6 +130,7 @@ BEGIN
 		WHEN 8 =>
 			Ax.Enable = GND;
 			Bx.Enable = GND;
+			Cx.Enable = GND;
 			alu_x.Enable = GND;
 			alu_y.Enable = GND;
 			
@@ -116,5 +139,10 @@ BEGIN
 			
 	END CASE;
 	
-
+	--Unidad de control
+	PC.(Reloj,Reset) = (Reloj, Reset);
+	PC.Dato[] = GND;
+	PC.Cmd[] = GND;
+	--CASE PC 
+	
 END;
