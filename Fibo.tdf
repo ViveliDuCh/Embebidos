@@ -1,0 +1,46 @@
+FUNCTION MicroControl(Reloj, Reset, Fin)
+	RETURNS (Control[13..0], DST[4..0], SRC[4..0], CMD[2..0], Rst, CheckFin, Next[3..0], SS);
+
+FUNCTION ArchivoRegistros(
+	Reloj, Reset, Fx[7..0], SelBus[4..0], Cmd[2..0], DST[4..0], SRC[4..0], Enable_r)
+	RETURNS (Ax_t[7..0], Bx_t[7..0],Cx_t[7..0],x_t[7..0],y_t[7..0],r_t[7..0], ALU_t[7..0], Bus_t[7..0]);
+	
+SUBDESIGN Fibo(
+	Reloj, Reset,	N[7..0]	: INPUT;
+	DST[4..0], SRC[4..0], CMD[2..0] : OUTPUT;
+	Rst, Ax_t[7..0], Bx_t[7..0],Cx_t[7..0],x_t[7..0],y_t[7..0],r_t[7..0], ALU_t[7..0], Bus_t[7..0]: OUTPUT;
+)
+
+VARIABLE
+Control : MicroControl;
+DataPath : ArchivoRegistros;
+Fin : Node;
+
+BEGIN
+	
+	Control.(Reloj, Reset, Fin) = (Reloj, Reset, Fin);
+	DataPath.(Reloj, Reset, Fx[], SelBus[], Cmd[], DST[], SRC[], Enable_r) = 
+						  (Reloj, Reset, N[],Control.SRC[],Control.Cmd[],Control.DST[],Control.SRC[],VCC);
+
+						  
+	DST[] = Control.DST[];
+	SRC[] = Control.SRC[];
+	CMD[] = Control.CMD[];
+	Rst = Control.Rst;
+	Ax_t[] = DataPath.Ax_t[];
+	Bx_t[] = DataPath.Bx_t[];
+	Cx_t[] = DataPath.Cx_t[];
+	x_t[] = DataPath.x_t[];
+	y_t[] = DataPath.y_t[];
+	r_t[] = DataPath.r_t[];
+	ALU_t[] = DataPath.ALU_t[];
+	Bus_t[] = DataPath.Bus_t[];
+	
+	IF (DataPath.Ax_t[] == GND) THEN
+		Fin = VCC;
+	ELSE
+		Fin = GND;
+	END IF;
+	
+	
+END;

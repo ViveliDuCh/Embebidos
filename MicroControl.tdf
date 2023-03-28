@@ -1,0 +1,44 @@
+FUNCTION MicroMEM(Direccion[3..0])
+	RETURNS (SalidaControl[18..0]);
+
+SUBDESIGN MicroControl(
+	Reloj, Reset, Fin		: INPUT;
+	Control[13..0], DST[4..0], SRC[4..0], CMD[2..0], Rst, CheckFin, Next[3..0]: OUTPUT;
+	SS						: OUTPUT;
+)
+VARIABLE
+	M : MicroMEM;
+	Secuenciador[3..0]					  : DFF;
+	SelectorSecuenciador				  : NODE;
+
+BEGIN
+	Secuenciador[].(clk, clrn) = (!Reloj, !Reset);
+
+	% Inicializacion de la micromemoria %
+	M.Direccion[] = Secuenciador[];
+
+	% Conexion de salidas %
+	Control[] = M.SalidaControl[18..5];
+	DST[] = M.SalidaControl[18..14];
+	SRC[] = M.SalidaControl[13..9];
+	CMD[] = M.SalidaControl[8..6];
+	Rst = M.SalidaControl[5];
+	CheckFin = M.SalidaControl[4];
+	Next[] = M.SalidaControl[3..0];
+	
+	% Definicion de la carga del valor siguiente %
+	IF (SelectorSecuenciador == VCC) THEN
+		Secuenciador[] = Secuenciador[] + 1;
+	ELSE
+		Secuenciador[] = M.SalidaControl[3..0];
+	END IF;
+
+	IF (M.SalidaControl[4] == VCC) THEN
+		SelectorSecuenciador = Fin;
+	ELSE
+		SelectorSecuenciador = GND;
+	END IF;
+
+	SS = SelectorSecuenciador;
+
+END;
