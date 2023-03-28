@@ -10,8 +10,8 @@ FUNCTION ALU (in_x[7..0], in_y[7..0]  )
 
 
 SUBDESIGN ArchivoRegistros(
-	Reloj, Reset, Fx[7..0], SelBus[4..0], Cmd[2..0], DST[4..0], SRC[4..0] : INPUT;
-	Ax_t[7..0], Bx_t[7..0],Cx_t[7..0],x_t[7..0],y_t[7..0],r_t[7..0], Bus_t[7..0]: OUTPUT;
+	Reloj, Reset, Fx[7..0], SelBus[4..0], Cmd[2..0], DST[4..0], SRC[4..0], Enable_r: INPUT;
+	Ax_t[7..0], Bx_t[7..0],Cx_t[7..0],x_t[7..0],y_t[7..0],r_t[7..0], ALU_t[7..0], Bus_t[7..0]: OUTPUT;
 )
 
 VARIABLE
@@ -21,8 +21,6 @@ Ax : RegUnivEn;
 Bx : RegUnivEn;
 Cx : RegUnivEn;
 
-PC : RegUnivEn;
-
 alu_x : RegLoad;
 alu_y : RegLoad;
 alu_r : RegLoad;
@@ -31,28 +29,28 @@ ALU_prueba : ALU;
 
 
 BEGIN
-
-
 	Ax.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
 	Bx.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
 	Cx.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
 	
 	alu_x.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
 	alu_y.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
-	alu_r.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
+	alu_r.(Reloj, Reset) = (Reloj, Reset);
 	
 	ALU_prueba.(in_x[7..0], in_y[7..0] ) = (alu_x.Salida,alu_y.Salida);
 	
-	alu_r.Dato = alu_x.Salida[] + alu_y.Salida[]+5;
-	alu_r.Enable = VCC;
-	alu_r.Load = VCC;
-			
+	alu_r.Dato = ALU_prueba.R;
+	alu_r.Enable = Enable_r;
+	alu_r.Load = Enable_r;
+	
+	--Salidas de debug
 	Ax_t[] = Ax.Salida[];
 	Bx_t[] = Bx.Salida[];
-	Cx_t[] = Bx.Salida[];
+	Cx_t[] = Cx.Salida[];
 	x_t[] = alu_x.Salida[];
 	y_t[] = alu_y.Salida[];
 	r_t[] = alu_r.Salida[];
+	ALU_t = ALU_prueba.R;
 	Bus_t[] = BUS[];
 	
 	--Selecciona valor del bus
@@ -79,6 +77,7 @@ BEGIN
 		WHEN 0 =>
 			Ax.Enable = VCC;
 			Bx.Enable = GND;
+			Cx.Enable = GND;
 			alu_x.Enable = GND;
 			alu_x.Load = GND;
 			alu_y.Enable = GND;
@@ -91,7 +90,6 @@ BEGIN
 			Cx.Enable = GND;
 			alu_x.Enable = GND;
 			alu_y.Enable = GND;
-			
 			alu_x.Load = GND;
 			alu_y.Load = GND;
 			
@@ -101,7 +99,6 @@ BEGIN
 			Cx.Enable = VCC;
 			alu_x.Enable = GND;
 			alu_y.Enable = GND;
-			
 			alu_x.Load = GND;
 			alu_y.Load = GND;	
 			
@@ -112,7 +109,6 @@ BEGIN
 			alu_x.Enable = VCC;
 			alu_x.Load = VCC;
 			alu_y.Enable = GND;
-			
 			alu_y.Load = GND;
 
 			
@@ -122,7 +118,6 @@ BEGIN
 			Cx.Enable = GND;
 			alu_x.Enable = GND;
 			alu_x.Load = GND;
-			
 			alu_y.Enable = VCC;
 			alu_y.Load = VCC;
 			
@@ -133,16 +128,9 @@ BEGIN
 			Cx.Enable = GND;
 			alu_x.Enable = GND;
 			alu_y.Enable = GND;
-			
 			alu_x.Load = GND;
 			alu_y.Load = GND;
 			
 	END CASE;
-	
-	--Unidad de control
-	PC.(Reloj,Reset) = (Reloj, Reset);
-	PC.Dato[] = GND;
-	PC.Cmd[] = GND;
-	--CASE PC 
 	
 END;
