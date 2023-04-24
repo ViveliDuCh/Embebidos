@@ -119,9 +119,30 @@ def errorCheck(operation, operationAddressing, operandCodes, operandAddressing, 
 def printError(line, message):
     print("Error in line {}: {}".format(line, message))
     
-input_file = 'programa.txt'
-output_file = 'output.txt'
+input_file = 'ensamblador/programa.txt'
+output_file = 'ensamblador/output.txt'
 outputLines = []
+tags = []
+
+with open(input_file) as infile:
+    lineNumber = 1
+    line= infile.readline()
+
+    while line != "":
+        instruction = re.split(instructionSeparator,line.strip())
+        if instruction[-1][-1] == ':':
+            if len(instruction)==1:
+                name = instruction[0].replace(":","")
+                tags.append([name,lineNumber])
+            else:
+                errorCounter += 1
+                printError(lineNumber, "Syntax error")
+
+        # Read the next line
+        lineNumber += 1
+        line = infile.readline()
+
+infile.close()  
 
 with open(input_file, 'r') as infile:
     
@@ -129,44 +150,45 @@ with open(input_file, 'r') as infile:
     line = infile.readline()
     
     while line != "":
-        
         instruction = re.split(instructionSeparator,line.strip())
-        operation = instruction[0]
-        
-        operands = []
-        operands.append(instruction[1])
-        operands.append(instruction[2])
-        
-        operandAddressing = []
-        operandCodes = []
-        
-        for operand in operands:
-            operandAddressing.append(getOperandAddressing(operand))
-            operandCodes.append(getOperandCode(operand, operandAddressing[-1]))
- 
-        operationAddressing = getOperationAddressing(operandAddressing); 
-        if operation in baseOpcodes and operationAddressing in opcodeOffsets:
-            operationCode = baseOpcodes[operation] + opcodeOffsets[operationAddressing]
-        else: 
-            operationCode = 0xFFFF
-        
-        errorCheck(operation, operationAddressing, operandCodes, operandAddressing, lineNumber)
-        
-        #Save output
-        outputLines.append(hex(operationCode))
-        outputLines.append(hex(operandCodes[0]))
-        outputLines.append(hex(operandCodes[1]))
-        
-        #Debug output:
-        print(line.strip())
-        #print(instruction)
-        print(operandAddressing)
-        print(operationAddressing)
-        print("OPC: {}".format(hex(operationCode)))
-        print("DST: {}".format(hex(operandCodes[0])))
-        print("SRC: {}".format(hex(operandCodes[1])))
-        print("Errors: {}".format(errorCounter))
-        print("\n")
+        if len(instruction)>1:
+            
+            operation = instruction[0]
+            
+            operands = []
+            operands.append(instruction[1])
+            operands.append(instruction[2])
+            
+            operandAddressing = []
+            operandCodes = []
+            
+            for operand in operands:
+                operandAddressing.append(getOperandAddressing(operand))
+                operandCodes.append(getOperandCode(operand, operandAddressing[-1]))
+    
+            operationAddressing = getOperationAddressing(operandAddressing); 
+            if operation in baseOpcodes and operationAddressing in opcodeOffsets:
+                operationCode = baseOpcodes[operation] + opcodeOffsets[operationAddressing]
+            else: 
+                operationCode = 0xFFFF
+            
+            errorCheck(operation, operationAddressing, operandCodes, operandAddressing, lineNumber)
+            
+            #Save output
+            outputLines.append(hex(operationCode))
+            outputLines.append(hex(operandCodes[0]))
+            outputLines.append(hex(operandCodes[1]))
+            
+            #Debug output:
+            print(line.strip())
+            #print(instruction)
+            print(operandAddressing)
+            print(operationAddressing)
+            print("OPC: {}".format(hex(operationCode)))
+            print("DST: {}".format(hex(operandCodes[0])))
+            print("SRC: {}".format(hex(operandCodes[1])))
+            print("Errors: {}".format(errorCounter))
+            print("\n")
         
         # Read the next line
         lineNumber += 1
@@ -185,3 +207,5 @@ if errorCounter == 0:
             outfile.write("\n")
             
     outfile.close()
+
+print(tags)
