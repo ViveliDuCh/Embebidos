@@ -122,7 +122,7 @@ def printError(line, message):
 input_file = 'ensamblador/programa.txt'
 output_file = 'ensamblador/output.txt'
 outputLines = []
-tags = []
+tags = {}
 
 with open(input_file) as infile:
     lineNumber = 1
@@ -133,7 +133,7 @@ with open(input_file) as infile:
         if instruction[-1][-1] == ':':
             if len(instruction)==1:
                 name = instruction[0].replace(":","")
-                tags.append([name,lineNumber])
+                tags.update({name:lineNumber})
             else:
                 errorCounter += 1
                 printError(lineNumber, "Syntax error")
