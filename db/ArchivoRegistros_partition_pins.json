@@ -260,6 +260,38 @@
 					"strict" : false
 				},
 				{
+					"name" : "DATA_BUS_OUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_OUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_OUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_OUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_OUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_OUT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_OUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_OUT[7]",
+					"strict" : false
+				},
+				{
 					"name" : "ADDR_BUS[0]",
 					"strict" : false
 				},
@@ -292,19 +324,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SRC_UC[2]",
-					"strict" : false
-				},
-				{
-					"name" : "SelSRC",
-					"strict" : false
-				},
-				{
 					"name" : "SRC_UC[3]",
 					"strict" : false
 				},
 				{
-					"name" : "SRC_UC[4]",
+					"name" : "SelSRC",
 					"strict" : false
 				},
 				{
@@ -313,6 +337,14 @@
 				},
 				{
 					"name" : "SRC_UC[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SRC_UC[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SRC_UC[4]",
 					"strict" : false
 				},
 				{
@@ -348,11 +380,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "DST_UC[2]",
+					"strict" : false
+				},
+				{
 					"name" : "SelDST",
 					"strict" : false
 				},
 				{
-					"name" : "DST_UC[2]",
+					"name" : "DST_UC[0]",
 					"strict" : false
 				},
 				{
@@ -361,10 +397,6 @@
 				},
 				{
 					"name" : "DST_UC[4]",
-					"strict" : false
-				},
-				{
-					"name" : "DST_UC[0]",
 					"strict" : false
 				},
 				{
@@ -396,35 +428,43 @@
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS[0]",
+					"name" : "DATA_BUS_IN[0]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS[1]",
+					"name" : "SelMDR",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS[2]",
+					"name" : "SelMAR",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS[3]",
+					"name" : "DATA_BUS_IN[1]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS[4]",
+					"name" : "DATA_BUS_IN[2]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS[5]",
+					"name" : "DATA_BUS_IN[3]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS[6]",
+					"name" : "DATA_BUS_IN[4]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS[7]",
+					"name" : "DATA_BUS_IN[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_IN[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_IN[7]",
 					"strict" : false
 				}
 			]
