@@ -10,38 +10,103 @@ FUNCTION ALU (in_x[7..0], in_y[7..0]  )
 
 
 SUBDESIGN ArchivoRegistros(
-	Reloj, Reset, Fx[7..0], SelBus[4..0], Cmd[2..0], DST[4..0], SRC[4..0], Enable_r: INPUT;
-	Ax_t[7..0], Bx_t[7..0],Cx_t[7..0],x_t[7..0],y_t[7..0],r_t[7..0], ALU_t[7..0], Bus_t[7..0]: OUTPUT;
+	Reloj, Reset, Fx[7..0], SelDST, SelSRC, SelMAR, Cmd[2..0], DST_UC[4..0], SRC_UC[4..0], Enable_r, DATA_BUS[7..0]: INPUT;
+	Ax_t[7..0], Bx_t[7..0],Cx_t[7..0],x_t[7..0],y_t[7..0],r_t[7..0], ALU_t[7..0], Bus_t[7..0], ADDR_BUS[7..0]: OUTPUT;
 )
 
 VARIABLE
 BUS[7..0] : NODE;
-
-Ax : RegUnivEn;
-Bx : RegUnivEn;
-Cx : RegUnivEn;
-
-alu_x : RegLoad;
-alu_y : RegLoad;
-alu_r : RegLoad;
-
 ALU_prueba : ALU;
+
+SelMUX[4..0] : NODE;
+
+SelBus[4..0] : NODE;
+
+% Registros Generales%
+
+Ax : RegUnivEn;  % 0 %
+Bx : RegUnivEn;  % 1 %
+Cx : RegUnivEn;  % 2 %
+Dx : RegUnivEn;  % 3 %
+Ex : RegUnivEn;  % 4 %
+
+% Registro de ALU%
+alu_x : RegLoad; % 6 %
+alu_y : RegLoad; % 7 %
+alu_r : RegLoad; % 8 %
+
+% Registros destino y fuente%
+DST : RegLoad    ;% 9 %
+SRC : RegLoad;   % 10 %
+
+% Registros de Trabajo con RAM%
+PC  : RegUnivEn; % 11 %
+MAR : RegLoad;   % 12 %
+MDR : RegLoad;   % 13 %
+IR  : RegLoad;   % 14 %
+BP  : RegLoad;   % 15 %
+SP  : RegUnivEn; % 16 %
+SI  : RegUnivEn; % 17 %
+DI  : RegUnivEn; % 18 %
 
 
 BEGIN
+
+DEFAULTS 
+	Ax.Enable = GND;
+	Bx.Enable = GND;
+	Cx.Enable = GND;
+	Dx.Enable = GND;
+	Ex.Enable = GND;
+	
+	alu_x.Enable = GND; 
+	alu_y.Enable = GND; 
+	
+	DST.Enable = GND;
+	SRC.Enable = GND;
+	
+	PC.Enable = GND;
+	MAR.Enable = GND;
+	MDR.Enable = GND;
+	IR.Enable = GND;
+	BP.Enable = GND;
+	SP.Enable = GND;
+	SI.Enable = GND;
+	DI.Enable = GND;
+
+END DEFAULTS;
+
+	ALU_prueba.(in_x[7..0], in_y[7..0] ) = (alu_x.Salida,alu_y.Salida);
+	
+% Registros Generales%
+
 	Ax.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
 	Bx.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
 	Cx.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
+	Ex.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
+	Dx.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
 	
+% Registro de ALU%
 	alu_x.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
 	alu_y.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
 	alu_r.(Reloj, Reset) = (Reloj, Reset);
-	
-	ALU_prueba.(in_x[7..0], in_y[7..0] ) = (alu_x.Salida,alu_y.Salida);
-	
 	alu_r.Dato = ALU_prueba.R;
 	alu_r.Enable = Enable_r;
-	alu_r.Load = Enable_r;
+	
+	
+% Registros destino y fuente%
+   DST.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
+	SRC.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
+	
+% Registros de Trabajo con RAM%
+	PC.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
+	MAR.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
+	MDR.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
+	IR.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
+	BP.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
+	SP.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
+	SI.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
+	DI.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
 	
 	--Salidas de debug
 	Ax_t[] = Ax.Salida[];
@@ -53,7 +118,20 @@ BEGIN
 	ALU_t = ALU_prueba.R;
 	Bus_t[] = BUS[];
 	
-	--Selecciona valor del bus
+	ADDR_BUS[] = MAR.Salida[];
+	
+	MDR.Dato[] = DATA_BUS[];
+	
+	
+	
+	
+	% ---------------------------SELECTOR DE VALOR DE BUS--------------------------------- %
+	IF (SelSRC == VCC) THEN
+		SelBus[] = SRC_UC[]; % FUENTE DESDE LA UNIDAD DE CONTROL %
+	ELSE
+		SelBus[] = SRC.Salida[4..0]; % FUENTE DESDE EL REGISTRO SRC %
+	END IF;
+
 	CASE SelBus[] IS
 		WHEN 0 =>
 			BUS[] = Ax.Salida[];
@@ -70,67 +148,121 @@ BEGIN
 		WHEN 8 =>
 			BUS[] = alu_r.Salida[];
 			
-	END CASE;
-	
-	--Decoder de enables
-	CASE DST[] IS
-		WHEN 0 =>
-			Ax.Enable = VCC;
-			Bx.Enable = GND;
-			Cx.Enable = GND;
-			alu_x.Enable = GND;
-			alu_x.Load = GND;
-			alu_y.Enable = GND;
-			alu_y.Load = GND;
-
-	
-		WHEN 1 =>
-			Ax.Enable = GND;
-			Bx.Enable = VCC;
-			Cx.Enable = GND;
-			alu_x.Enable = GND;
-			alu_y.Enable = GND;
-			alu_x.Load = GND;
-			alu_y.Load = GND;
+		WHEN 11 =>
+			BUS[] = PC.Salida[];
 			
-		WHEN 2 =>
-			Ax.Enable = GND;
-			Bx.Enable = GND;
-			Cx.Enable = VCC;
-			alu_x.Enable = GND;
-			alu_y.Enable = GND;
-			alu_x.Load = GND;
-			alu_y.Load = GND;	
+		WHEN 12 =>
+			BUS[] = MAR.Salida[];
 			
-		WHEN 6 =>
-			Ax.Enable = GND;
-			Bx.Enable = GND;
-			Cx.Enable = GND;
-			alu_x.Enable = VCC;
-			alu_x.Load = VCC;
-			alu_y.Enable = GND;
-			alu_y.Load = GND;
-
+		WHEN 13 =>
+			BUS[] = MDR.Salida[];
 			
-		WHEN 7 =>
-			Ax.Enable = GND;
-			Bx.Enable = GND;
-			Cx.Enable = GND;
-			alu_x.Enable = GND;
-			alu_x.Load = GND;
-			alu_y.Enable = VCC;
-			alu_y.Load = VCC;
+		WHEN 14 =>
+			BUS[] = IR.Salida[];
 			
+		WHEN 15 =>
+			BUS[] = BP.Salida[];
 			
-		WHEN 8 =>
-			Ax.Enable = GND;
-			Bx.Enable = GND;
-			Cx.Enable = GND;
-			alu_x.Enable = GND;
-			alu_y.Enable = GND;
-			alu_x.Load = GND;
-			alu_y.Load = GND;
+		WHEN 16 =>
+			BUS[] = SP.Salida[];
+		
+		WHEN 17 =>
+			BUS[] = SI.Salida[];
+			
+		WHEN 18 =>
+			BUS[] = DI.Salida[];
+			
+		WHEN OTHERS =>
+		
+			BUS[] = B"10101010";
 			
 	END CASE;
+	
+	% ---------------------------------SELECTOR DE DESTINO -------------------------------------------%
+	
+	IF (SelDST == VCC) THEN
+		SelMux[] = DST_UC[]; %DESTINO DESDE LA UNIDAD DE CONTROL%
+	ELSE
+		SelMux[] = DST.Salida[4..0]; %DESTINO DESDE EL REGISTRO DST%
+	END IF;
+	
+		--Decoder de enables 
+		CASE SelMux[] IS
+			WHEN 0 =>
+				Ax.Enable = VCC;
+		
+			WHEN 1 =>
+				Bx.Enable = VCC;
+				
+			WHEN 2 =>
+				Cx.Enable = VCC;	
+				
+			WHEN 3 =>
+				Dx.Enable = VCC;	
+				
+			WHEN 4 =>
+				Ex.Enable = VCC;	
+				
+			WHEN 6 =>
+				alu_x.Enable = VCC; 
+				
+			WHEN 7 =>
+				alu_y.Enable = VCC; 
+				
+			WHEN 9 =>
+				DST.Enable = VCC; 
+				
+			WHEN 10 =>
+				SRC.Enable = VCC; 
+				
+			WHEN 11 =>
+				PC.Enable = VCC; 
+				
+			WHEN 12 =>
+				MAR.Enable = VCC; 
+				
+			WHEN 13 =>
+				MDR.Enable = VCC; 
+				
+			WHEN 14 =>
+				IR.Enable = VCC; 
+				
+			WHEN 15 =>
+				BP.Enable = VCC; 
+				
+			WHEN 16 =>
+				SP.Enable = VCC; 
+				
+			WHEN 17 =>
+				SI.Enable = VCC; 
+				
+			WHEN 18 =>
+				DI.Enable = VCC; 
+					
+			WHEN OTHERS =>
+			
+				Ax.Enable = GND;
+				Bx.Enable = GND;
+				Cx.Enable = GND;
+				Dx.Enable = GND;
+				Ex.Enable = GND;
+				
+				alu_x.Enable = GND; 
+				alu_y.Enable = GND; 
+				
+				DST.Enable = GND;
+				SRC.Enable = GND;
+				
+				PC.Enable = GND;
+				MAR.Enable = GND;
+				MDR.Enable = GND;
+				IR.Enable = GND;
+				BP.Enable = GND;
+				SP.Enable = GND;
+				SI.Enable = GND;
+				DI.Enable = GND;
+				
+			
+		END CASE;
 	
 END;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ArchivoRegistros
-Mon Mar 27 12:41:57 2023
+Thu May 04 15:41:19 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -42,16 +42,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Mar 27 12:41:56 2023       ;
+; Analysis & Synthesis Status        ; Successful - Thu May 04 15:41:19 2023       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; ArchivoRegistros                            ;
 ; Top-level Entity Name              ; ArchivoRegistros                            ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 231                                         ;
-;     Total combinational functions  ; 223                                         ;
-;     Dedicated logic registers      ; 48                                          ;
-; Total registers                    ; 48                                          ;
-; Total pins                         ; 84                                          ;
+; Total logic elements               ; 563                                         ;
+;     Total combinational functions  ; 521                                         ;
+;     Dedicated logic registers      ; 122                                         ;
+; Total registers                    ; 122                                         ;
+; Total pins                         ; 107                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -153,27 +153,27 @@ refer to the applicable agreement for further details.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processors 2-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                        ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                 ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
-; ALU.tdf                          ; yes             ; User AHDL File  ; D:/Embebidos/Quartus Programs/Embebidos/ALU.tdf              ;         ;
-; ArchivoRegistros.tdf             ; yes             ; User AHDL File  ; D:/Embebidos/Quartus Programs/Embebidos/ArchivoRegistros.tdf ;         ;
-; RegUnivEn.tdf                    ; yes             ; User AHDL File  ; D:/Embebidos/Quartus Programs/Embebidos/RegUnivEn.tdf        ;         ;
-; RegLoad.tdf                      ; yes             ; User AHDL File  ; D:/Embebidos/Quartus Programs/Embebidos/RegLoad.tdf          ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
+; ALU.tdf                          ; yes             ; User AHDL File  ; C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ALU.tdf              ;         ;
+; ArchivoRegistros.tdf             ; yes             ; User AHDL File  ; C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ArchivoRegistros.tdf ;         ;
+; RegUnivEn.tdf                    ; yes             ; User AHDL File  ; C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/RegUnivEn.tdf        ;         ;
+; RegLoad.tdf                      ; yes             ; User AHDL File  ; C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/RegLoad.tdf          ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -181,46 +181,57 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 231         ;
+; Estimated Total logic elements              ; 563         ;
 ;                                             ;             ;
-; Total combinational functions               ; 223         ;
+; Total combinational functions               ; 521         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 112         ;
-;     -- 3 input functions                    ; 51          ;
-;     -- <=2 input functions                  ; 60          ;
+;     -- 4 input functions                    ; 297         ;
+;     -- 3 input functions                    ; 117         ;
+;     -- <=2 input functions                  ; 107         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 170         ;
-;     -- arithmetic mode                      ; 53          ;
+;     -- normal mode                          ; 423         ;
+;     -- arithmetic mode                      ; 98          ;
 ;                                             ;             ;
-; Total registers                             ; 48          ;
-;     -- Dedicated logic registers            ; 48          ;
+; Total registers                             ; 122         ;
+;     -- Dedicated logic registers            ; 122         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 84          ;
+; I/O pins                                    ; 107         ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; Reloj~input ;
-; Maximum fan-out                             ; 48          ;
-; Total fan-out                               ; 1014        ;
-; Average fan-out                             ; 2.31        ;
+; Maximum fan-out                             ; 122         ;
+; Total fan-out                               ; 2350        ;
+; Average fan-out                             ; 2.74        ;
 +---------------------------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                 ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------+------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name             ; Entity Name      ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------+------------------+--------------+
-; |ArchivoRegistros          ; 223 (60)            ; 48 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 84   ; 0            ; 0          ; |ArchivoRegistros               ; ArchivoRegistros ; work         ;
-;    |RegLoad:alu_r|         ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegLoad:alu_r ; RegLoad          ; work         ;
-;    |RegLoad:alu_x|         ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegLoad:alu_x ; RegLoad          ; work         ;
-;    |RegLoad:alu_y|         ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegLoad:alu_y ; RegLoad          ; work         ;
-;    |RegUnivEn:Ax|          ; 54 (54)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegUnivEn:Ax  ; RegUnivEn        ; work         ;
-;    |RegUnivEn:Bx|          ; 54 (54)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegUnivEn:Bx  ; RegUnivEn        ; work         ;
-;    |RegUnivEn:Cx|          ; 55 (55)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegUnivEn:Cx  ; RegUnivEn        ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------+------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                  ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------+------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name              ; Entity Name      ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------+------------------+--------------+
+; |ArchivoRegistros          ; 521 (128)           ; 122 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 107  ; 0            ; 0          ; |ArchivoRegistros                ; ArchivoRegistros ; work         ;
+;    |ALU:ALU_prueba|        ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|ALU:ALU_prueba ; ALU              ; work         ;
+;    |RegLoad:BP|            ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegLoad:BP     ; RegLoad          ; work         ;
+;    |RegLoad:DST|           ; 0 (0)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegLoad:DST    ; RegLoad          ; work         ;
+;    |RegLoad:IR|            ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegLoad:IR     ; RegLoad          ; work         ;
+;    |RegLoad:MAR|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegLoad:MAR    ; RegLoad          ; work         ;
+;    |RegLoad:MDR|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegLoad:MDR    ; RegLoad          ; work         ;
+;    |RegLoad:SRC|           ; 0 (0)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegLoad:SRC    ; RegLoad          ; work         ;
+;    |RegLoad:alu_r|         ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegLoad:alu_r  ; RegLoad          ; work         ;
+;    |RegLoad:alu_x|         ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegLoad:alu_x  ; RegLoad          ; work         ;
+;    |RegLoad:alu_y|         ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegLoad:alu_y  ; RegLoad          ; work         ;
+;    |RegUnivEn:Ax|          ; 55 (55)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegUnivEn:Ax   ; RegUnivEn        ; work         ;
+;    |RegUnivEn:Bx|          ; 55 (55)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegUnivEn:Bx   ; RegUnivEn        ; work         ;
+;    |RegUnivEn:Cx|          ; 55 (55)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegUnivEn:Cx   ; RegUnivEn        ; work         ;
+;    |RegUnivEn:DI|          ; 55 (55)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegUnivEn:DI   ; RegUnivEn        ; work         ;
+;    |RegUnivEn:PC|          ; 55 (55)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegUnivEn:PC   ; RegUnivEn        ; work         ;
+;    |RegUnivEn:SI|          ; 55 (55)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegUnivEn:SI   ; RegUnivEn        ; work         ;
+;    |RegUnivEn:SP|          ; 55 (55)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ArchivoRegistros|RegUnivEn:SP   ; RegUnivEn        ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -229,12 +240,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 48    ;
+; Total registers                              ; 122   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 48    ;
+; Number of registers using Asynchronous Clear ; 122   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 16    ;
+; Number of registers using Clock Enable       ; 66    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -244,22 +255,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 84                          ;
-; cycloneiii_ff         ; 48                          ;
-;     CLR               ; 32                          ;
-;     ENA CLR           ; 16                          ;
-; cycloneiii_lcell_comb ; 223                         ;
-;     arith             ; 53                          ;
-;         2 data inputs ; 43                          ;
-;         3 data inputs ; 10                          ;
-;     normal            ; 170                         ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 10                          ;
-;         3 data inputs ; 41                          ;
-;         4 data inputs ; 112                         ;
+; boundary_port         ; 107                         ;
+; cycloneiii_ff         ; 122                         ;
+;     CLR               ; 56                          ;
+;     ENA CLR           ; 66                          ;
+; cycloneiii_lcell_comb ; 521                         ;
+;     arith             ; 98                          ;
+;         2 data inputs ; 84                          ;
+;         3 data inputs ; 14                          ;
+;     normal            ; 423                         ;
+;         1 data inputs ; 14                          ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 103                         ;
+;         4 data inputs ; 297                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 4.81                        ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 5.44                        ;
 +-----------------------+-----------------------------+
 
 
@@ -268,7 +279,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -278,45 +289,44 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Mar 27 12:41:43 2023
+    Info: Processing started: Thu May 04 15:41:03 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ArchivoRegistros -c ArchivoRegistros
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file alu.tdf
-    Info (12023): Found entity 1: ALU File: D:/Embebidos/Quartus Programs/Embebidos/ALU.tdf Line: 1
-Warning (287004): Group name "Salida" is missing brackets ([ ]) File: D:/Embebidos/Quartus Programs/Embebidos/ArchivoRegistros.tdf Line: 44
-Warning (287004): Group name "Salida" is missing brackets ([ ]) File: D:/Embebidos/Quartus Programs/Embebidos/ArchivoRegistros.tdf Line: 44
-Warning (287004): Group name "Dato" is missing brackets ([ ]) File: D:/Embebidos/Quartus Programs/Embebidos/ArchivoRegistros.tdf Line: 46
+    Info (12023): Found entity 1: ALU File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ALU.tdf Line: 1
+Warning (287004): Group name "Salida" is missing brackets ([ ]) File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ArchivoRegistros.tdf Line: 79
+Warning (287004): Group name "Salida" is missing brackets ([ ]) File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ArchivoRegistros.tdf Line: 79
+Warning (287004): Group name "Dato" is missing brackets ([ ]) File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ArchivoRegistros.tdf Line: 93
+Warning (287004): Group name "R" is missing brackets ([ ]) File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ArchivoRegistros.tdf Line: 93
+Warning (287004): Group name "ALU_t" is missing brackets ([ ]) File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ArchivoRegistros.tdf Line: 118
+Warning (287004): Group name "R" is missing brackets ([ ]) File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ArchivoRegistros.tdf Line: 118
 Info (12021): Found 1 design units, including 1 entities, in source file archivoregistros.tdf
-    Info (12023): Found entity 1: ArchivoRegistros File: D:/Embebidos/Quartus Programs/Embebidos/ArchivoRegistros.tdf Line: 12
+    Info (12023): Found entity 1: ArchivoRegistros File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ArchivoRegistros.tdf Line: 12
 Info (12021): Found 1 design units, including 1 entities, in source file reguniven.tdf
-    Info (12023): Found entity 1: RegUnivEn File: D:/Embebidos/Quartus Programs/Embebidos/RegUnivEn.tdf Line: 1
+    Info (12023): Found entity 1: RegUnivEn File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/RegUnivEn.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file regload.tdf
-    Info (12023): Found entity 1: RegLoad File: D:/Embebidos/Quartus Programs/Embebidos/RegLoad.tdf Line: 1
+    Info (12023): Found entity 1: RegLoad File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/RegLoad.tdf Line: 1
 Info (12127): Elaborating entity "ArchivoRegistros" for the top level hierarchy
-Warning (287013): Variable or input pin "SRC" is defined but never used. File: D:/Embebidos/Quartus Programs/Embebidos/ArchivoRegistros.tdf Line: 13
-Info (12128): Elaborating entity "RegUnivEn" for hierarchy "RegUnivEn:Ax" File: D:/Embebidos/Quartus Programs/Embebidos/ArchivoRegistros.tdf Line: 20
-Info (12128): Elaborating entity "RegUnivEn" for hierarchy "RegUnivEn:PC" File: D:/Embebidos/Quartus Programs/Embebidos/ArchivoRegistros.tdf Line: 24
-Info (12128): Elaborating entity "RegLoad" for hierarchy "RegLoad:alu_x" File: D:/Embebidos/Quartus Programs/Embebidos/ArchivoRegistros.tdf Line: 26
-Info (12128): Elaborating entity "RegLoad" for hierarchy "RegLoad:alu_r" File: D:/Embebidos/Quartus Programs/Embebidos/ArchivoRegistros.tdf Line: 28
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU_prueba" File: D:/Embebidos/Quartus Programs/Embebidos/ArchivoRegistros.tdf Line: 30
+Warning (287013): Variable or input pin "SelMAR" is defined but never used. File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ArchivoRegistros.tdf Line: 13
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU_prueba" File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ArchivoRegistros.tdf Line: 19
+Info (12128): Elaborating entity "RegUnivEn" for hierarchy "RegUnivEn:Ax" File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ArchivoRegistros.tdf Line: 27
+Info (12128): Elaborating entity "RegUnivEn" for hierarchy "RegUnivEn:Dx" File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ArchivoRegistros.tdf Line: 30
+Info (12128): Elaborating entity "RegLoad" for hierarchy "RegLoad:alu_x" File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ArchivoRegistros.tdf Line: 34
+Info (12128): Elaborating entity "RegLoad" for hierarchy "RegLoad:DST" File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ArchivoRegistros.tdf Line: 39
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 5 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SRC[0]" File: D:/Embebidos/Quartus Programs/Embebidos/ArchivoRegistros.tdf Line: 13
-    Warning (15610): No output dependent on input pin "SRC[1]" File: D:/Embebidos/Quartus Programs/Embebidos/ArchivoRegistros.tdf Line: 13
-    Warning (15610): No output dependent on input pin "SRC[2]" File: D:/Embebidos/Quartus Programs/Embebidos/ArchivoRegistros.tdf Line: 13
-    Warning (15610): No output dependent on input pin "SRC[3]" File: D:/Embebidos/Quartus Programs/Embebidos/ArchivoRegistros.tdf Line: 13
-    Warning (15610): No output dependent on input pin "SRC[4]" File: D:/Embebidos/Quartus Programs/Embebidos/ArchivoRegistros.tdf Line: 13
-Info (21057): Implemented 323 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 28 input pins
-    Info (21059): Implemented 56 output pins
-    Info (21061): Implemented 239 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4764 megabytes
-    Info: Processing ended: Mon Mar 27 12:41:57 2023
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:28
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SelMAR" File: C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/ArchivoRegistros.tdf Line: 13
+Info (21057): Implemented 686 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 35 input pins
+    Info (21059): Implemented 72 output pins
+    Info (21061): Implemented 579 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 4806 megabytes
+    Info: Processing ended: Thu May 04 15:41:19 2023
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:30
 
 
