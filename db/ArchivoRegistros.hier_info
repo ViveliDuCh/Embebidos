@@ -1,4 +1,133 @@
-|ArchivoRegistros
+|MiQRObio
+ALU_t[0] <= ArchivoRegistros:Arch.ALU_t[0]
+ALU_t[1] <= ArchivoRegistros:Arch.ALU_t[1]
+ALU_t[2] <= ArchivoRegistros:Arch.ALU_t[2]
+ALU_t[3] <= ArchivoRegistros:Arch.ALU_t[3]
+ALU_t[4] <= ArchivoRegistros:Arch.ALU_t[4]
+ALU_t[5] <= ArchivoRegistros:Arch.ALU_t[5]
+ALU_t[6] <= ArchivoRegistros:Arch.ALU_t[6]
+ALU_t[7] <= ArchivoRegistros:Arch.ALU_t[7]
+Reloj => ArchivoRegistros:Arch.Reloj
+Reloj => RAM_8bit:RAM.clock
+Reset => ArchivoRegistros:Arch.Reset
+SelDST => ArchivoRegistros:Arch.SelDST
+SelSRC => ArchivoRegistros:Arch.SelSRC
+SelMAR => ArchivoRegistros:Arch.SelMAR
+SelMDR => ArchivoRegistros:Arch.SelMDR
+Enable_t => ArchivoRegistros:Arch.Enable_r
+Cmd[0] => ArchivoRegistros:Arch.Cmd[0]
+Cmd[1] => ArchivoRegistros:Arch.Cmd[1]
+Cmd[2] => ArchivoRegistros:Arch.Cmd[2]
+Write_En => RAM_8bit:RAM.wren
+DST_UC[0] => ArchivoRegistros:Arch.DST_UC[0]
+DST_UC[1] => ArchivoRegistros:Arch.DST_UC[1]
+DST_UC[2] => ArchivoRegistros:Arch.DST_UC[2]
+DST_UC[3] => ArchivoRegistros:Arch.DST_UC[3]
+DST_UC[4] => ArchivoRegistros:Arch.DST_UC[4]
+Fx[0] => ArchivoRegistros:Arch.Fx[0]
+Fx[1] => ArchivoRegistros:Arch.Fx[1]
+Fx[2] => ArchivoRegistros:Arch.Fx[2]
+Fx[3] => ArchivoRegistros:Arch.Fx[3]
+Fx[4] => ArchivoRegistros:Arch.Fx[4]
+Fx[5] => ArchivoRegistros:Arch.Fx[5]
+Fx[6] => ArchivoRegistros:Arch.Fx[6]
+Fx[7] => ArchivoRegistros:Arch.Fx[7]
+SRC_UC[0] => ArchivoRegistros:Arch.SRC_UC[0]
+SRC_UC[1] => ArchivoRegistros:Arch.SRC_UC[1]
+SRC_UC[2] => ArchivoRegistros:Arch.SRC_UC[2]
+SRC_UC[3] => ArchivoRegistros:Arch.SRC_UC[3]
+SRC_UC[4] => ArchivoRegistros:Arch.SRC_UC[4]
+Ax_t[0] <= ArchivoRegistros:Arch.Ax_t[0]
+Ax_t[1] <= ArchivoRegistros:Arch.Ax_t[1]
+Ax_t[2] <= ArchivoRegistros:Arch.Ax_t[2]
+Ax_t[3] <= ArchivoRegistros:Arch.Ax_t[3]
+Ax_t[4] <= ArchivoRegistros:Arch.Ax_t[4]
+Ax_t[5] <= ArchivoRegistros:Arch.Ax_t[5]
+Ax_t[6] <= ArchivoRegistros:Arch.Ax_t[6]
+Ax_t[7] <= ArchivoRegistros:Arch.Ax_t[7]
+Bus_t[0] <= ArchivoRegistros:Arch.Bus_t[0]
+Bus_t[1] <= ArchivoRegistros:Arch.Bus_t[1]
+Bus_t[2] <= ArchivoRegistros:Arch.Bus_t[2]
+Bus_t[3] <= ArchivoRegistros:Arch.Bus_t[3]
+Bus_t[4] <= ArchivoRegistros:Arch.Bus_t[4]
+Bus_t[5] <= ArchivoRegistros:Arch.Bus_t[5]
+Bus_t[6] <= ArchivoRegistros:Arch.Bus_t[6]
+Bus_t[7] <= ArchivoRegistros:Arch.Bus_t[7]
+Bx_t[0] <= ArchivoRegistros:Arch.Bx_t[0]
+Bx_t[1] <= ArchivoRegistros:Arch.Bx_t[1]
+Bx_t[2] <= ArchivoRegistros:Arch.Bx_t[2]
+Bx_t[3] <= ArchivoRegistros:Arch.Bx_t[3]
+Bx_t[4] <= ArchivoRegistros:Arch.Bx_t[4]
+Bx_t[5] <= ArchivoRegistros:Arch.Bx_t[5]
+Bx_t[6] <= ArchivoRegistros:Arch.Bx_t[6]
+Bx_t[7] <= ArchivoRegistros:Arch.Bx_t[7]
+Cx_t[0] <= ArchivoRegistros:Arch.Cx_t[0]
+Cx_t[1] <= ArchivoRegistros:Arch.Cx_t[1]
+Cx_t[2] <= ArchivoRegistros:Arch.Cx_t[2]
+Cx_t[3] <= ArchivoRegistros:Arch.Cx_t[3]
+Cx_t[4] <= ArchivoRegistros:Arch.Cx_t[4]
+Cx_t[5] <= ArchivoRegistros:Arch.Cx_t[5]
+Cx_t[6] <= ArchivoRegistros:Arch.Cx_t[6]
+Cx_t[7] <= ArchivoRegistros:Arch.Cx_t[7]
+IR[0] <= ArchivoRegistros:Arch.IR_t[0]
+IR[1] <= ArchivoRegistros:Arch.IR_t[1]
+IR[2] <= ArchivoRegistros:Arch.IR_t[2]
+IR[3] <= ArchivoRegistros:Arch.IR_t[3]
+IR[4] <= ArchivoRegistros:Arch.IR_t[4]
+IR[5] <= ArchivoRegistros:Arch.IR_t[5]
+IR[6] <= ArchivoRegistros:Arch.IR_t[6]
+IR[7] <= ArchivoRegistros:Arch.IR_t[7]
+MAR[0] <= ArchivoRegistros:Arch.MAR_t[0]
+MAR[1] <= ArchivoRegistros:Arch.MAR_t[1]
+MAR[2] <= ArchivoRegistros:Arch.MAR_t[2]
+MAR[3] <= ArchivoRegistros:Arch.MAR_t[3]
+MAR[4] <= ArchivoRegistros:Arch.MAR_t[4]
+MAR[5] <= ArchivoRegistros:Arch.MAR_t[5]
+MAR[6] <= ArchivoRegistros:Arch.MAR_t[6]
+MAR[7] <= ArchivoRegistros:Arch.MAR_t[7]
+MDR[0] <= ArchivoRegistros:Arch.MDR_t[0]
+MDR[1] <= ArchivoRegistros:Arch.MDR_t[1]
+MDR[2] <= ArchivoRegistros:Arch.MDR_t[2]
+MDR[3] <= ArchivoRegistros:Arch.MDR_t[3]
+MDR[4] <= ArchivoRegistros:Arch.MDR_t[4]
+MDR[5] <= ArchivoRegistros:Arch.MDR_t[5]
+MDR[6] <= ArchivoRegistros:Arch.MDR_t[6]
+MDR[7] <= ArchivoRegistros:Arch.MDR_t[7]
+PC[0] <= ArchivoRegistros:Arch.PC_t[0]
+PC[1] <= ArchivoRegistros:Arch.PC_t[1]
+PC[2] <= ArchivoRegistros:Arch.PC_t[2]
+PC[3] <= ArchivoRegistros:Arch.PC_t[3]
+PC[4] <= ArchivoRegistros:Arch.PC_t[4]
+PC[5] <= ArchivoRegistros:Arch.PC_t[5]
+PC[6] <= ArchivoRegistros:Arch.PC_t[6]
+PC[7] <= ArchivoRegistros:Arch.PC_t[7]
+r_t[0] <= ArchivoRegistros:Arch.r_t[0]
+r_t[1] <= ArchivoRegistros:Arch.r_t[1]
+r_t[2] <= ArchivoRegistros:Arch.r_t[2]
+r_t[3] <= ArchivoRegistros:Arch.r_t[3]
+r_t[4] <= ArchivoRegistros:Arch.r_t[4]
+r_t[5] <= ArchivoRegistros:Arch.r_t[5]
+r_t[6] <= ArchivoRegistros:Arch.r_t[6]
+r_t[7] <= ArchivoRegistros:Arch.r_t[7]
+x_t[0] <= ArchivoRegistros:Arch.x_t[0]
+x_t[1] <= ArchivoRegistros:Arch.x_t[1]
+x_t[2] <= ArchivoRegistros:Arch.x_t[2]
+x_t[3] <= ArchivoRegistros:Arch.x_t[3]
+x_t[4] <= ArchivoRegistros:Arch.x_t[4]
+x_t[5] <= ArchivoRegistros:Arch.x_t[5]
+x_t[6] <= ArchivoRegistros:Arch.x_t[6]
+x_t[7] <= ArchivoRegistros:Arch.x_t[7]
+y_t[0] <= ArchivoRegistros:Arch.y_t[0]
+y_t[1] <= ArchivoRegistros:Arch.y_t[1]
+y_t[2] <= ArchivoRegistros:Arch.y_t[2]
+y_t[3] <= ArchivoRegistros:Arch.y_t[3]
+y_t[4] <= ArchivoRegistros:Arch.y_t[4]
+y_t[5] <= ArchivoRegistros:Arch.y_t[5]
+y_t[6] <= ArchivoRegistros:Arch.y_t[6]
+y_t[7] <= ArchivoRegistros:Arch.y_t[7]
+
+
+|MiQRObio|ArchivoRegistros:Arch
 Reloj => RegUnivEn:Ax.reloj
 Reloj => RegUnivEn:Bx.reloj
 Reloj => RegUnivEn:Cx.reloj
@@ -167,6 +296,38 @@ Bus_t[4] <= BUS[4].DB_MAX_OUTPUT_PORT_TYPE
 Bus_t[5] <= BUS[5].DB_MAX_OUTPUT_PORT_TYPE
 Bus_t[6] <= BUS[6].DB_MAX_OUTPUT_PORT_TYPE
 Bus_t[7] <= BUS[7].DB_MAX_OUTPUT_PORT_TYPE
+PC_t[0] <= RegUnivEn:PC.salida[0]
+PC_t[1] <= RegUnivEn:PC.salida[1]
+PC_t[2] <= RegUnivEn:PC.salida[2]
+PC_t[3] <= RegUnivEn:PC.salida[3]
+PC_t[4] <= RegUnivEn:PC.salida[4]
+PC_t[5] <= RegUnivEn:PC.salida[5]
+PC_t[6] <= RegUnivEn:PC.salida[6]
+PC_t[7] <= RegUnivEn:PC.salida[7]
+MAR_t[0] <= RegLoad:MAR.salida[0]
+MAR_t[1] <= RegLoad:MAR.salida[1]
+MAR_t[2] <= RegLoad:MAR.salida[2]
+MAR_t[3] <= RegLoad:MAR.salida[3]
+MAR_t[4] <= RegLoad:MAR.salida[4]
+MAR_t[5] <= RegLoad:MAR.salida[5]
+MAR_t[6] <= RegLoad:MAR.salida[6]
+MAR_t[7] <= RegLoad:MAR.salida[7]
+MDR_t[0] <= RegLoad:MDR.salida[0]
+MDR_t[1] <= RegLoad:MDR.salida[1]
+MDR_t[2] <= RegLoad:MDR.salida[2]
+MDR_t[3] <= RegLoad:MDR.salida[3]
+MDR_t[4] <= RegLoad:MDR.salida[4]
+MDR_t[5] <= RegLoad:MDR.salida[5]
+MDR_t[6] <= RegLoad:MDR.salida[6]
+MDR_t[7] <= RegLoad:MDR.salida[7]
+IR_t[0] <= RegLoad:IR.salida[0]
+IR_t[1] <= RegLoad:IR.salida[1]
+IR_t[2] <= RegLoad:IR.salida[2]
+IR_t[3] <= RegLoad:IR.salida[3]
+IR_t[4] <= RegLoad:IR.salida[4]
+IR_t[5] <= RegLoad:IR.salida[5]
+IR_t[6] <= RegLoad:IR.salida[6]
+IR_t[7] <= RegLoad:IR.salida[7]
 DATA_BUS_OUT[0] <= RegLoad:MDR.salida[0]
 DATA_BUS_OUT[1] <= RegLoad:MDR.salida[1]
 DATA_BUS_OUT[2] <= RegLoad:MDR.salida[2]
@@ -185,7 +346,7 @@ ADDR_BUS[6] <= RegLoad:MAR.salida[6]
 ADDR_BUS[7] <= RegLoad:MAR.salida[7]
 
 
-|ArchivoRegistros|ALU:ALU_prueba
+|MiQRObio|ArchivoRegistros:Arch|ALU:ALU_prueba
 in_x[0] => op_1.IN14
 in_x[1] => op_1.IN12
 in_x[2] => op_1.IN10
@@ -212,7 +373,7 @@ R[6] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
 R[7] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ArchivoRegistros|RegUnivEn:Ax
+|MiQRObio|ArchivoRegistros:Arch|RegUnivEn:Ax
 Reloj => R[7].CLK
 Reloj => R[6].CLK
 Reloj => R[5].CLK
@@ -273,7 +434,7 @@ Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
 Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ArchivoRegistros|RegUnivEn:Bx
+|MiQRObio|ArchivoRegistros:Arch|RegUnivEn:Bx
 Reloj => R[7].CLK
 Reloj => R[6].CLK
 Reloj => R[5].CLK
@@ -334,7 +495,7 @@ Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
 Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ArchivoRegistros|RegUnivEn:Cx
+|MiQRObio|ArchivoRegistros:Arch|RegUnivEn:Cx
 Reloj => R[7].CLK
 Reloj => R[6].CLK
 Reloj => R[5].CLK
@@ -395,7 +556,7 @@ Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
 Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ArchivoRegistros|RegUnivEn:Dx
+|MiQRObio|ArchivoRegistros:Arch|RegUnivEn:Dx
 Reloj => R[7].CLK
 Reloj => R[6].CLK
 Reloj => R[5].CLK
@@ -456,7 +617,7 @@ Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
 Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ArchivoRegistros|RegUnivEn:Ex
+|MiQRObio|ArchivoRegistros:Arch|RegUnivEn:Ex
 Reloj => R[7].CLK
 Reloj => R[6].CLK
 Reloj => R[5].CLK
@@ -517,7 +678,7 @@ Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
 Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ArchivoRegistros|RegLoad:alu_x
+|MiQRObio|ArchivoRegistros:Arch|RegLoad:alu_x
 Reloj => R[7].CLK
 Reloj => R[6].CLK
 Reloj => R[5].CLK
@@ -554,7 +715,7 @@ Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
 Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ArchivoRegistros|RegLoad:alu_y
+|MiQRObio|ArchivoRegistros:Arch|RegLoad:alu_y
 Reloj => R[7].CLK
 Reloj => R[6].CLK
 Reloj => R[5].CLK
@@ -591,7 +752,7 @@ Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
 Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ArchivoRegistros|RegLoad:alu_r
+|MiQRObio|ArchivoRegistros:Arch|RegLoad:alu_r
 Reloj => R[7].CLK
 Reloj => R[6].CLK
 Reloj => R[5].CLK
@@ -628,7 +789,7 @@ Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
 Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ArchivoRegistros|RegLoad:DST
+|MiQRObio|ArchivoRegistros:Arch|RegLoad:DST
 Reloj => R[7].CLK
 Reloj => R[6].CLK
 Reloj => R[5].CLK
@@ -665,7 +826,7 @@ Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
 Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ArchivoRegistros|RegLoad:SRC
+|MiQRObio|ArchivoRegistros:Arch|RegLoad:SRC
 Reloj => R[7].CLK
 Reloj => R[6].CLK
 Reloj => R[5].CLK
@@ -702,216 +863,7 @@ Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
 Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ArchivoRegistros|RegUnivEn:PC
-Reloj => R[7].CLK
-Reloj => R[6].CLK
-Reloj => R[5].CLK
-Reloj => R[4].CLK
-Reloj => R[3].CLK
-Reloj => R[2].CLK
-Reloj => R[1].CLK
-Reloj => R[0].CLK
-Reset => R[7].IN0
-Dato[0] => _.IN1
-Dato[1] => _.IN1
-Dato[2] => _.IN1
-Dato[3] => _.IN1
-Dato[4] => _.IN1
-Dato[5] => _.IN1
-Dato[6] => _.IN1
-Dato[7] => _.IN1
-Cmd[0] => _.IN0
-Cmd[0] => _.IN2
-Cmd[0] => _.IN0
-Cmd[0] => _.IN2
-Cmd[0] => _.IN0
-Cmd[0] => _.IN2
-Cmd[0] => _.IN0
-Cmd[0] => _.IN2
-Cmd[1] => _.IN0
-Cmd[1] => _.IN0
-Cmd[1] => _.IN1
-Cmd[1] => _.IN1
-Cmd[1] => _.IN0
-Cmd[1] => _.IN0
-Cmd[1] => _.IN1
-Cmd[1] => _.IN1
-Cmd[2] => _.IN0
-Cmd[2] => _.IN0
-Cmd[2] => _.IN0
-Cmd[2] => _.IN0
-Cmd[2] => _.IN0
-Cmd[2] => _.IN0
-Cmd[2] => _.IN0
-Cmd[2] => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Salida[0] <= R[0].DB_MAX_OUTPUT_PORT_TYPE
-Salida[1] <= R[1].DB_MAX_OUTPUT_PORT_TYPE
-Salida[2] <= R[2].DB_MAX_OUTPUT_PORT_TYPE
-Salida[3] <= R[3].DB_MAX_OUTPUT_PORT_TYPE
-Salida[4] <= R[4].DB_MAX_OUTPUT_PORT_TYPE
-Salida[5] <= R[5].DB_MAX_OUTPUT_PORT_TYPE
-Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
-Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|ArchivoRegistros|RegLoad:MAR
-Reloj => R[7].CLK
-Reloj => R[6].CLK
-Reloj => R[5].CLK
-Reloj => R[4].CLK
-Reloj => R[3].CLK
-Reloj => R[2].CLK
-Reloj => R[1].CLK
-Reloj => R[0].CLK
-Reset => R[7].IN0
-Dato[0] => _.IN1
-Dato[1] => _.IN1
-Dato[2] => _.IN1
-Dato[3] => _.IN1
-Dato[4] => _.IN1
-Dato[5] => _.IN1
-Dato[6] => _.IN1
-Dato[7] => _.IN1
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Salida[0] <= R[0].DB_MAX_OUTPUT_PORT_TYPE
-Salida[1] <= R[1].DB_MAX_OUTPUT_PORT_TYPE
-Salida[2] <= R[2].DB_MAX_OUTPUT_PORT_TYPE
-Salida[3] <= R[3].DB_MAX_OUTPUT_PORT_TYPE
-Salida[4] <= R[4].DB_MAX_OUTPUT_PORT_TYPE
-Salida[5] <= R[5].DB_MAX_OUTPUT_PORT_TYPE
-Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
-Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|ArchivoRegistros|RegLoad:MDR
-Reloj => R[7].CLK
-Reloj => R[6].CLK
-Reloj => R[5].CLK
-Reloj => R[4].CLK
-Reloj => R[3].CLK
-Reloj => R[2].CLK
-Reloj => R[1].CLK
-Reloj => R[0].CLK
-Reset => R[7].IN0
-Dato[0] => _.IN1
-Dato[1] => _.IN1
-Dato[2] => _.IN1
-Dato[3] => _.IN1
-Dato[4] => _.IN1
-Dato[5] => _.IN1
-Dato[6] => _.IN1
-Dato[7] => _.IN1
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Salida[0] <= R[0].DB_MAX_OUTPUT_PORT_TYPE
-Salida[1] <= R[1].DB_MAX_OUTPUT_PORT_TYPE
-Salida[2] <= R[2].DB_MAX_OUTPUT_PORT_TYPE
-Salida[3] <= R[3].DB_MAX_OUTPUT_PORT_TYPE
-Salida[4] <= R[4].DB_MAX_OUTPUT_PORT_TYPE
-Salida[5] <= R[5].DB_MAX_OUTPUT_PORT_TYPE
-Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
-Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|ArchivoRegistros|RegLoad:IR
-Reloj => R[7].CLK
-Reloj => R[6].CLK
-Reloj => R[5].CLK
-Reloj => R[4].CLK
-Reloj => R[3].CLK
-Reloj => R[2].CLK
-Reloj => R[1].CLK
-Reloj => R[0].CLK
-Reset => R[7].IN0
-Dato[0] => _.IN1
-Dato[1] => _.IN1
-Dato[2] => _.IN1
-Dato[3] => _.IN1
-Dato[4] => _.IN1
-Dato[5] => _.IN1
-Dato[6] => _.IN1
-Dato[7] => _.IN1
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Salida[0] <= R[0].DB_MAX_OUTPUT_PORT_TYPE
-Salida[1] <= R[1].DB_MAX_OUTPUT_PORT_TYPE
-Salida[2] <= R[2].DB_MAX_OUTPUT_PORT_TYPE
-Salida[3] <= R[3].DB_MAX_OUTPUT_PORT_TYPE
-Salida[4] <= R[4].DB_MAX_OUTPUT_PORT_TYPE
-Salida[5] <= R[5].DB_MAX_OUTPUT_PORT_TYPE
-Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
-Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|ArchivoRegistros|RegLoad:BP
-Reloj => R[7].CLK
-Reloj => R[6].CLK
-Reloj => R[5].CLK
-Reloj => R[4].CLK
-Reloj => R[3].CLK
-Reloj => R[2].CLK
-Reloj => R[1].CLK
-Reloj => R[0].CLK
-Reset => R[7].IN0
-Dato[0] => _.IN1
-Dato[1] => _.IN1
-Dato[2] => _.IN1
-Dato[3] => _.IN1
-Dato[4] => _.IN1
-Dato[5] => _.IN1
-Dato[6] => _.IN1
-Dato[7] => _.IN1
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Enable => _.IN0
-Salida[0] <= R[0].DB_MAX_OUTPUT_PORT_TYPE
-Salida[1] <= R[1].DB_MAX_OUTPUT_PORT_TYPE
-Salida[2] <= R[2].DB_MAX_OUTPUT_PORT_TYPE
-Salida[3] <= R[3].DB_MAX_OUTPUT_PORT_TYPE
-Salida[4] <= R[4].DB_MAX_OUTPUT_PORT_TYPE
-Salida[5] <= R[5].DB_MAX_OUTPUT_PORT_TYPE
-Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
-Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|ArchivoRegistros|RegUnivEn:SP
+|MiQRObio|ArchivoRegistros:Arch|RegUnivEn:PC
 Reloj => R[7].CLK
 Reloj => R[6].CLK
 Reloj => R[5].CLK
@@ -972,7 +924,155 @@ Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
 Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ArchivoRegistros|RegUnivEn:SI
+|MiQRObio|ArchivoRegistros:Arch|RegLoad:MAR
+Reloj => R[7].CLK
+Reloj => R[6].CLK
+Reloj => R[5].CLK
+Reloj => R[4].CLK
+Reloj => R[3].CLK
+Reloj => R[2].CLK
+Reloj => R[1].CLK
+Reloj => R[0].CLK
+Reset => R[7].IN0
+Dato[0] => _.IN1
+Dato[1] => _.IN1
+Dato[2] => _.IN1
+Dato[3] => _.IN1
+Dato[4] => _.IN1
+Dato[5] => _.IN1
+Dato[6] => _.IN1
+Dato[7] => _.IN1
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Salida[0] <= R[0].DB_MAX_OUTPUT_PORT_TYPE
+Salida[1] <= R[1].DB_MAX_OUTPUT_PORT_TYPE
+Salida[2] <= R[2].DB_MAX_OUTPUT_PORT_TYPE
+Salida[3] <= R[3].DB_MAX_OUTPUT_PORT_TYPE
+Salida[4] <= R[4].DB_MAX_OUTPUT_PORT_TYPE
+Salida[5] <= R[5].DB_MAX_OUTPUT_PORT_TYPE
+Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
+Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MiQRObio|ArchivoRegistros:Arch|RegLoad:MDR
+Reloj => R[7].CLK
+Reloj => R[6].CLK
+Reloj => R[5].CLK
+Reloj => R[4].CLK
+Reloj => R[3].CLK
+Reloj => R[2].CLK
+Reloj => R[1].CLK
+Reloj => R[0].CLK
+Reset => R[7].IN0
+Dato[0] => _.IN1
+Dato[1] => _.IN1
+Dato[2] => _.IN1
+Dato[3] => _.IN1
+Dato[4] => _.IN1
+Dato[5] => _.IN1
+Dato[6] => _.IN1
+Dato[7] => _.IN1
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Salida[0] <= R[0].DB_MAX_OUTPUT_PORT_TYPE
+Salida[1] <= R[1].DB_MAX_OUTPUT_PORT_TYPE
+Salida[2] <= R[2].DB_MAX_OUTPUT_PORT_TYPE
+Salida[3] <= R[3].DB_MAX_OUTPUT_PORT_TYPE
+Salida[4] <= R[4].DB_MAX_OUTPUT_PORT_TYPE
+Salida[5] <= R[5].DB_MAX_OUTPUT_PORT_TYPE
+Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
+Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MiQRObio|ArchivoRegistros:Arch|RegLoad:IR
+Reloj => R[7].CLK
+Reloj => R[6].CLK
+Reloj => R[5].CLK
+Reloj => R[4].CLK
+Reloj => R[3].CLK
+Reloj => R[2].CLK
+Reloj => R[1].CLK
+Reloj => R[0].CLK
+Reset => R[7].IN0
+Dato[0] => _.IN1
+Dato[1] => _.IN1
+Dato[2] => _.IN1
+Dato[3] => _.IN1
+Dato[4] => _.IN1
+Dato[5] => _.IN1
+Dato[6] => _.IN1
+Dato[7] => _.IN1
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Salida[0] <= R[0].DB_MAX_OUTPUT_PORT_TYPE
+Salida[1] <= R[1].DB_MAX_OUTPUT_PORT_TYPE
+Salida[2] <= R[2].DB_MAX_OUTPUT_PORT_TYPE
+Salida[3] <= R[3].DB_MAX_OUTPUT_PORT_TYPE
+Salida[4] <= R[4].DB_MAX_OUTPUT_PORT_TYPE
+Salida[5] <= R[5].DB_MAX_OUTPUT_PORT_TYPE
+Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
+Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MiQRObio|ArchivoRegistros:Arch|RegLoad:BP
+Reloj => R[7].CLK
+Reloj => R[6].CLK
+Reloj => R[5].CLK
+Reloj => R[4].CLK
+Reloj => R[3].CLK
+Reloj => R[2].CLK
+Reloj => R[1].CLK
+Reloj => R[0].CLK
+Reset => R[7].IN0
+Dato[0] => _.IN1
+Dato[1] => _.IN1
+Dato[2] => _.IN1
+Dato[3] => _.IN1
+Dato[4] => _.IN1
+Dato[5] => _.IN1
+Dato[6] => _.IN1
+Dato[7] => _.IN1
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Salida[0] <= R[0].DB_MAX_OUTPUT_PORT_TYPE
+Salida[1] <= R[1].DB_MAX_OUTPUT_PORT_TYPE
+Salida[2] <= R[2].DB_MAX_OUTPUT_PORT_TYPE
+Salida[3] <= R[3].DB_MAX_OUTPUT_PORT_TYPE
+Salida[4] <= R[4].DB_MAX_OUTPUT_PORT_TYPE
+Salida[5] <= R[5].DB_MAX_OUTPUT_PORT_TYPE
+Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
+Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MiQRObio|ArchivoRegistros:Arch|RegUnivEn:SP
 Reloj => R[7].CLK
 Reloj => R[6].CLK
 Reloj => R[5].CLK
@@ -1033,7 +1133,7 @@ Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
 Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ArchivoRegistros|RegUnivEn:DI
+|MiQRObio|ArchivoRegistros:Arch|RegUnivEn:SI
 Reloj => R[7].CLK
 Reloj => R[6].CLK
 Reloj => R[5].CLK
@@ -1092,5 +1192,243 @@ Salida[4] <= R[4].DB_MAX_OUTPUT_PORT_TYPE
 Salida[5] <= R[5].DB_MAX_OUTPUT_PORT_TYPE
 Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
 Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MiQRObio|ArchivoRegistros:Arch|RegUnivEn:DI
+Reloj => R[7].CLK
+Reloj => R[6].CLK
+Reloj => R[5].CLK
+Reloj => R[4].CLK
+Reloj => R[3].CLK
+Reloj => R[2].CLK
+Reloj => R[1].CLK
+Reloj => R[0].CLK
+Reset => R[7].IN0
+Dato[0] => _.IN1
+Dato[1] => _.IN1
+Dato[2] => _.IN1
+Dato[3] => _.IN1
+Dato[4] => _.IN1
+Dato[5] => _.IN1
+Dato[6] => _.IN1
+Dato[7] => _.IN1
+Cmd[0] => _.IN0
+Cmd[0] => _.IN2
+Cmd[0] => _.IN0
+Cmd[0] => _.IN2
+Cmd[0] => _.IN0
+Cmd[0] => _.IN2
+Cmd[0] => _.IN0
+Cmd[0] => _.IN2
+Cmd[1] => _.IN0
+Cmd[1] => _.IN0
+Cmd[1] => _.IN1
+Cmd[1] => _.IN1
+Cmd[1] => _.IN0
+Cmd[1] => _.IN0
+Cmd[1] => _.IN1
+Cmd[1] => _.IN1
+Cmd[2] => _.IN0
+Cmd[2] => _.IN0
+Cmd[2] => _.IN0
+Cmd[2] => _.IN0
+Cmd[2] => _.IN0
+Cmd[2] => _.IN0
+Cmd[2] => _.IN0
+Cmd[2] => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Enable => _.IN0
+Salida[0] <= R[0].DB_MAX_OUTPUT_PORT_TYPE
+Salida[1] <= R[1].DB_MAX_OUTPUT_PORT_TYPE
+Salida[2] <= R[2].DB_MAX_OUTPUT_PORT_TYPE
+Salida[3] <= R[3].DB_MAX_OUTPUT_PORT_TYPE
+Salida[4] <= R[4].DB_MAX_OUTPUT_PORT_TYPE
+Salida[5] <= R[5].DB_MAX_OUTPUT_PORT_TYPE
+Salida[6] <= R[6].DB_MAX_OUTPUT_PORT_TYPE
+Salida[7] <= R[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MiQRObio|RAM_8bit:RAM
+address[0] => altsyncram:altsyncram_component.address_a[0]
+address[1] => altsyncram:altsyncram_component.address_a[1]
+address[2] => altsyncram:altsyncram_component.address_a[2]
+address[3] => altsyncram:altsyncram_component.address_a[3]
+address[4] => altsyncram:altsyncram_component.address_a[4]
+address[5] => altsyncram:altsyncram_component.address_a[5]
+address[6] => altsyncram:altsyncram_component.address_a[6]
+address[7] => altsyncram:altsyncram_component.address_a[7]
+clock => altsyncram:altsyncram_component.clock0
+data[0] => altsyncram:altsyncram_component.data_a[0]
+data[1] => altsyncram:altsyncram_component.data_a[1]
+data[2] => altsyncram:altsyncram_component.data_a[2]
+data[3] => altsyncram:altsyncram_component.data_a[3]
+data[4] => altsyncram:altsyncram_component.data_a[4]
+data[5] => altsyncram:altsyncram_component.data_a[5]
+data[6] => altsyncram:altsyncram_component.data_a[6]
+data[7] => altsyncram:altsyncram_component.data_a[7]
+wren => altsyncram:altsyncram_component.wren_a
+q[0] <= altsyncram:altsyncram_component.q_a[0]
+q[1] <= altsyncram:altsyncram_component.q_a[1]
+q[2] <= altsyncram:altsyncram_component.q_a[2]
+q[3] <= altsyncram:altsyncram_component.q_a[3]
+q[4] <= altsyncram:altsyncram_component.q_a[4]
+q[5] <= altsyncram:altsyncram_component.q_a[5]
+q[6] <= altsyncram:altsyncram_component.q_a[6]
+q[7] <= altsyncram:altsyncram_component.q_a[7]
+
+
+|MiQRObio|RAM_8bit:RAM|altsyncram:altsyncram_component
+wren_a => altsyncram_1jo3:auto_generated.wren_a
+rden_a => ~NO_FANOUT~
+wren_b => ~NO_FANOUT~
+rden_b => ~NO_FANOUT~
+data_a[0] => altsyncram_1jo3:auto_generated.data_a[0]
+data_a[1] => altsyncram_1jo3:auto_generated.data_a[1]
+data_a[2] => altsyncram_1jo3:auto_generated.data_a[2]
+data_a[3] => altsyncram_1jo3:auto_generated.data_a[3]
+data_a[4] => altsyncram_1jo3:auto_generated.data_a[4]
+data_a[5] => altsyncram_1jo3:auto_generated.data_a[5]
+data_a[6] => altsyncram_1jo3:auto_generated.data_a[6]
+data_a[7] => altsyncram_1jo3:auto_generated.data_a[7]
+data_b[0] => ~NO_FANOUT~
+address_a[0] => altsyncram_1jo3:auto_generated.address_a[0]
+address_a[1] => altsyncram_1jo3:auto_generated.address_a[1]
+address_a[2] => altsyncram_1jo3:auto_generated.address_a[2]
+address_a[3] => altsyncram_1jo3:auto_generated.address_a[3]
+address_a[4] => altsyncram_1jo3:auto_generated.address_a[4]
+address_a[5] => altsyncram_1jo3:auto_generated.address_a[5]
+address_a[6] => altsyncram_1jo3:auto_generated.address_a[6]
+address_a[7] => altsyncram_1jo3:auto_generated.address_a[7]
+address_b[0] => ~NO_FANOUT~
+addressstall_a => ~NO_FANOUT~
+addressstall_b => ~NO_FANOUT~
+clock0 => altsyncram_1jo3:auto_generated.clock0
+clock1 => ~NO_FANOUT~
+clocken0 => ~NO_FANOUT~
+clocken1 => ~NO_FANOUT~
+clocken2 => ~NO_FANOUT~
+clocken3 => ~NO_FANOUT~
+aclr0 => ~NO_FANOUT~
+aclr1 => ~NO_FANOUT~
+byteena_a[0] => ~NO_FANOUT~
+byteena_b[0] => ~NO_FANOUT~
+q_a[0] <= altsyncram_1jo3:auto_generated.q_a[0]
+q_a[1] <= altsyncram_1jo3:auto_generated.q_a[1]
+q_a[2] <= altsyncram_1jo3:auto_generated.q_a[2]
+q_a[3] <= altsyncram_1jo3:auto_generated.q_a[3]
+q_a[4] <= altsyncram_1jo3:auto_generated.q_a[4]
+q_a[5] <= altsyncram_1jo3:auto_generated.q_a[5]
+q_a[6] <= altsyncram_1jo3:auto_generated.q_a[6]
+q_a[7] <= altsyncram_1jo3:auto_generated.q_a[7]
+q_b[0] <= <GND>
+eccstatus[0] <= <GND>
+eccstatus[1] <= <GND>
+eccstatus[2] <= <GND>
+
+
+|MiQRObio|RAM_8bit:RAM|altsyncram:altsyncram_component|altsyncram_1jo3:auto_generated
+address_a[0] => ram_block1a0.PORTAADDR
+address_a[0] => ram_block1a1.PORTAADDR
+address_a[0] => ram_block1a2.PORTAADDR
+address_a[0] => ram_block1a3.PORTAADDR
+address_a[0] => ram_block1a4.PORTAADDR
+address_a[0] => ram_block1a5.PORTAADDR
+address_a[0] => ram_block1a6.PORTAADDR
+address_a[0] => ram_block1a7.PORTAADDR
+address_a[1] => ram_block1a0.PORTAADDR1
+address_a[1] => ram_block1a1.PORTAADDR1
+address_a[1] => ram_block1a2.PORTAADDR1
+address_a[1] => ram_block1a3.PORTAADDR1
+address_a[1] => ram_block1a4.PORTAADDR1
+address_a[1] => ram_block1a5.PORTAADDR1
+address_a[1] => ram_block1a6.PORTAADDR1
+address_a[1] => ram_block1a7.PORTAADDR1
+address_a[2] => ram_block1a0.PORTAADDR2
+address_a[2] => ram_block1a1.PORTAADDR2
+address_a[2] => ram_block1a2.PORTAADDR2
+address_a[2] => ram_block1a3.PORTAADDR2
+address_a[2] => ram_block1a4.PORTAADDR2
+address_a[2] => ram_block1a5.PORTAADDR2
+address_a[2] => ram_block1a6.PORTAADDR2
+address_a[2] => ram_block1a7.PORTAADDR2
+address_a[3] => ram_block1a0.PORTAADDR3
+address_a[3] => ram_block1a1.PORTAADDR3
+address_a[3] => ram_block1a2.PORTAADDR3
+address_a[3] => ram_block1a3.PORTAADDR3
+address_a[3] => ram_block1a4.PORTAADDR3
+address_a[3] => ram_block1a5.PORTAADDR3
+address_a[3] => ram_block1a6.PORTAADDR3
+address_a[3] => ram_block1a7.PORTAADDR3
+address_a[4] => ram_block1a0.PORTAADDR4
+address_a[4] => ram_block1a1.PORTAADDR4
+address_a[4] => ram_block1a2.PORTAADDR4
+address_a[4] => ram_block1a3.PORTAADDR4
+address_a[4] => ram_block1a4.PORTAADDR4
+address_a[4] => ram_block1a5.PORTAADDR4
+address_a[4] => ram_block1a6.PORTAADDR4
+address_a[4] => ram_block1a7.PORTAADDR4
+address_a[5] => ram_block1a0.PORTAADDR5
+address_a[5] => ram_block1a1.PORTAADDR5
+address_a[5] => ram_block1a2.PORTAADDR5
+address_a[5] => ram_block1a3.PORTAADDR5
+address_a[5] => ram_block1a4.PORTAADDR5
+address_a[5] => ram_block1a5.PORTAADDR5
+address_a[5] => ram_block1a6.PORTAADDR5
+address_a[5] => ram_block1a7.PORTAADDR5
+address_a[6] => ram_block1a0.PORTAADDR6
+address_a[6] => ram_block1a1.PORTAADDR6
+address_a[6] => ram_block1a2.PORTAADDR6
+address_a[6] => ram_block1a3.PORTAADDR6
+address_a[6] => ram_block1a4.PORTAADDR6
+address_a[6] => ram_block1a5.PORTAADDR6
+address_a[6] => ram_block1a6.PORTAADDR6
+address_a[6] => ram_block1a7.PORTAADDR6
+address_a[7] => ram_block1a0.PORTAADDR7
+address_a[7] => ram_block1a1.PORTAADDR7
+address_a[7] => ram_block1a2.PORTAADDR7
+address_a[7] => ram_block1a3.PORTAADDR7
+address_a[7] => ram_block1a4.PORTAADDR7
+address_a[7] => ram_block1a5.PORTAADDR7
+address_a[7] => ram_block1a6.PORTAADDR7
+address_a[7] => ram_block1a7.PORTAADDR7
+clock0 => ram_block1a0.CLK0
+clock0 => ram_block1a1.CLK0
+clock0 => ram_block1a2.CLK0
+clock0 => ram_block1a3.CLK0
+clock0 => ram_block1a4.CLK0
+clock0 => ram_block1a5.CLK0
+clock0 => ram_block1a6.CLK0
+clock0 => ram_block1a7.CLK0
+data_a[0] => ram_block1a0.PORTADATAIN
+data_a[1] => ram_block1a1.PORTADATAIN
+data_a[2] => ram_block1a2.PORTADATAIN
+data_a[3] => ram_block1a3.PORTADATAIN
+data_a[4] => ram_block1a4.PORTADATAIN
+data_a[5] => ram_block1a5.PORTADATAIN
+data_a[6] => ram_block1a6.PORTADATAIN
+data_a[7] => ram_block1a7.PORTADATAIN
+q_a[0] <= ram_block1a0.PORTADATAOUT
+q_a[1] <= ram_block1a1.PORTADATAOUT
+q_a[2] <= ram_block1a2.PORTADATAOUT
+q_a[3] <= ram_block1a3.PORTADATAOUT
+q_a[4] <= ram_block1a4.PORTADATAOUT
+q_a[5] <= ram_block1a5.PORTADATAOUT
+q_a[6] <= ram_block1a6.PORTADATAOUT
+q_a[7] <= ram_block1a7.PORTADATAOUT
+wren_a => ram_block1a0.PORTAWE
+wren_a => ram_block1a1.PORTAWE
+wren_a => ram_block1a2.PORTAWE
+wren_a => ram_block1a3.PORTAWE
+wren_a => ram_block1a4.PORTAWE
+wren_a => ram_block1a5.PORTAWE
+wren_a => ram_block1a6.PORTAWE
+wren_a => ram_block1a7.PORTAWE
 
 

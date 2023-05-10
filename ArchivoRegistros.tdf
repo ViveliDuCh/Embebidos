@@ -10,8 +10,8 @@ FUNCTION ALU (in_x[7..0], in_y[7..0]  )
 
 
 SUBDESIGN ArchivoRegistros(
-	Reloj, Reset, Fx[7..0], SelDST, SelSRC, SelMAR, SelMDR, Cmd[2..0], DST_UC[4..0], SRC_UC[4..0], Enable_r, DATA_BUS_IN[7..0]: INPUT;
-	Ax_t[7..0], Bx_t[7..0],Cx_t[7..0],x_t[7..0],y_t[7..0],r_t[7..0], ALU_t[7..0], Bus_t[7..0], DATA_BUS_OUT[7..0], ADDR_BUS[7..0]: OUTPUT;
+	Reloj, Reset, Fx[7..0], SelDST, SelSRC, SelMAR, SelMDR, Cmd[2..0], DST_UC[4..0], SRC_UC[4..0],Enable_r, DATA_BUS_IN[7..0]: INPUT;
+	Ax_t[7..0], Bx_t[7..0],Cx_t[7..0],x_t[7..0],y_t[7..0],r_t[7..0], ALU_t[7..0], Bus_t[7..0],PC_t[7..0], MAR_t[7..0],MDR_t[7..0], IR_t[7..0], DATA_BUS_OUT[7..0], ADDR_BUS[7..0]: OUTPUT;
 )
 
 VARIABLE
@@ -115,8 +115,14 @@ END DEFAULTS;
 	x_t[] = alu_x.Salida[];
 	y_t[] = alu_y.Salida[];
 	r_t[] = alu_r.Salida[];
-	ALU_t = ALU_prueba.R;
+	ALU_t[] = ALU_prueba.R[];
 	Bus_t[] = BUS[];
+	PC_t []= PC.Salida[];
+	MAR_t[] = MAR.Salida[];
+	MDR_t[] = MDR.Salida[];
+	IR_t[] = IR.Salida[];
+	
+	-- Salidas hacia la RAM
 	
 	ADDR_BUS[] = MAR.Salida[];
 	DATA_BUS_OUT[] = MDR.Salida[];

@@ -4,219 +4,7 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "Ax_t[0]",
-					"strict" : false
-				},
-				{
-					"name" : "Ax_t[1]",
-					"strict" : false
-				},
-				{
-					"name" : "Ax_t[2]",
-					"strict" : false
-				},
-				{
-					"name" : "Ax_t[3]",
-					"strict" : false
-				},
-				{
-					"name" : "Ax_t[4]",
-					"strict" : false
-				},
-				{
-					"name" : "Ax_t[5]",
-					"strict" : false
-				},
-				{
-					"name" : "Ax_t[6]",
-					"strict" : false
-				},
-				{
-					"name" : "Ax_t[7]",
-					"strict" : false
-				},
-				{
-					"name" : "Bx_t[0]",
-					"strict" : false
-				},
-				{
-					"name" : "Bx_t[1]",
-					"strict" : false
-				},
-				{
-					"name" : "Bx_t[2]",
-					"strict" : false
-				},
-				{
-					"name" : "Bx_t[3]",
-					"strict" : false
-				},
-				{
-					"name" : "Bx_t[4]",
-					"strict" : false
-				},
-				{
-					"name" : "Bx_t[5]",
-					"strict" : false
-				},
-				{
-					"name" : "Bx_t[6]",
-					"strict" : false
-				},
-				{
-					"name" : "Bx_t[7]",
-					"strict" : false
-				},
-				{
-					"name" : "Cx_t[0]",
-					"strict" : false
-				},
-				{
-					"name" : "Cx_t[1]",
-					"strict" : false
-				},
-				{
-					"name" : "Cx_t[2]",
-					"strict" : false
-				},
-				{
-					"name" : "Cx_t[3]",
-					"strict" : false
-				},
-				{
-					"name" : "Cx_t[4]",
-					"strict" : false
-				},
-				{
-					"name" : "Cx_t[5]",
-					"strict" : false
-				},
-				{
-					"name" : "Cx_t[6]",
-					"strict" : false
-				},
-				{
-					"name" : "Cx_t[7]",
-					"strict" : false
-				},
-				{
-					"name" : "x_t[0]",
-					"strict" : false
-				},
-				{
-					"name" : "x_t[1]",
-					"strict" : false
-				},
-				{
-					"name" : "x_t[2]",
-					"strict" : false
-				},
-				{
-					"name" : "x_t[3]",
-					"strict" : false
-				},
-				{
-					"name" : "x_t[4]",
-					"strict" : false
-				},
-				{
-					"name" : "x_t[5]",
-					"strict" : false
-				},
-				{
-					"name" : "x_t[6]",
-					"strict" : false
-				},
-				{
-					"name" : "x_t[7]",
-					"strict" : false
-				},
-				{
-					"name" : "y_t[0]",
-					"strict" : false
-				},
-				{
-					"name" : "y_t[1]",
-					"strict" : false
-				},
-				{
-					"name" : "y_t[2]",
-					"strict" : false
-				},
-				{
-					"name" : "y_t[3]",
-					"strict" : false
-				},
-				{
-					"name" : "y_t[4]",
-					"strict" : false
-				},
-				{
-					"name" : "y_t[5]",
-					"strict" : false
-				},
-				{
-					"name" : "y_t[6]",
-					"strict" : false
-				},
-				{
-					"name" : "y_t[7]",
-					"strict" : false
-				},
-				{
-					"name" : "r_t[0]",
-					"strict" : false
-				},
-				{
-					"name" : "r_t[1]",
-					"strict" : false
-				},
-				{
-					"name" : "r_t[2]",
-					"strict" : false
-				},
-				{
-					"name" : "r_t[3]",
-					"strict" : false
-				},
-				{
-					"name" : "r_t[4]",
-					"strict" : false
-				},
-				{
-					"name" : "r_t[5]",
-					"strict" : false
-				},
-				{
-					"name" : "r_t[6]",
-					"strict" : false
-				},
-				{
-					"name" : "r_t[7]",
-					"strict" : false
-				},
-				{
-					"name" : "ALU_t[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ALU_t[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ALU_t[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ALU_t[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ALU_t[4]",
-					"strict" : false
-				},
-				{
-					"name" : "ALU_t[5]",
+					"name" : "ALU_t[7]",
 					"strict" : false
 				},
 				{
@@ -224,35 +12,59 @@
 					"strict" : false
 				},
 				{
-					"name" : "ALU_t[7]",
+					"name" : "ALU_t[5]",
 					"strict" : false
 				},
 				{
-					"name" : "Bus_t[0]",
+					"name" : "ALU_t[4]",
 					"strict" : false
 				},
 				{
-					"name" : "Bus_t[1]",
+					"name" : "ALU_t[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Bus_t[2]",
+					"name" : "ALU_t[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Bus_t[3]",
+					"name" : "ALU_t[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Bus_t[4]",
+					"name" : "ALU_t[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Bus_t[5]",
+					"name" : "Ax_t[7]",
 					"strict" : false
 				},
 				{
-					"name" : "Bus_t[6]",
+					"name" : "Ax_t[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Ax_t[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Ax_t[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Ax_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Ax_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Ax_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Ax_t[0]",
 					"strict" : false
 				},
 				{
@@ -260,67 +72,327 @@
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS_OUT[0]",
+					"name" : "Bus_t[6]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS_OUT[1]",
+					"name" : "Bus_t[5]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS_OUT[2]",
+					"name" : "Bus_t[4]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS_OUT[3]",
+					"name" : "Bus_t[3]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS_OUT[4]",
+					"name" : "Bus_t[2]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS_OUT[5]",
+					"name" : "Bus_t[1]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS_OUT[6]",
+					"name" : "Bus_t[0]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS_OUT[7]",
+					"name" : "Bx_t[7]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_BUS[0]",
+					"name" : "Bx_t[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_BUS[1]",
+					"name" : "Bx_t[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_BUS[2]",
+					"name" : "Bx_t[4]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_BUS[3]",
+					"name" : "Bx_t[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_BUS[4]",
+					"name" : "Bx_t[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_BUS[5]",
+					"name" : "Bx_t[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_BUS[6]",
+					"name" : "Bx_t[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ADDR_BUS[7]",
+					"name" : "Cx_t[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Cx_t[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Cx_t[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Cx_t[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Cx_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Cx_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Cx_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Cx_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MAR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "MAR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "MAR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "MAR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "MAR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MAR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MAR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MAR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MDR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "MDR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "MDR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "MDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "MDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PC[7]",
+					"strict" : false
+				},
+				{
+					"name" : "PC[6]",
+					"strict" : false
+				},
+				{
+					"name" : "PC[5]",
+					"strict" : false
+				},
+				{
+					"name" : "PC[4]",
+					"strict" : false
+				},
+				{
+					"name" : "PC[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PC[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PC[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PC[0]",
+					"strict" : false
+				},
+				{
+					"name" : "r_t[7]",
+					"strict" : false
+				},
+				{
+					"name" : "r_t[6]",
+					"strict" : false
+				},
+				{
+					"name" : "r_t[5]",
+					"strict" : false
+				},
+				{
+					"name" : "r_t[4]",
+					"strict" : false
+				},
+				{
+					"name" : "r_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "r_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "r_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "r_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[7]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[6]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[5]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[4]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "y_t[7]",
+					"strict" : false
+				},
+				{
+					"name" : "y_t[6]",
+					"strict" : false
+				},
+				{
+					"name" : "y_t[5]",
+					"strict" : false
+				},
+				{
+					"name" : "y_t[4]",
+					"strict" : false
+				},
+				{
+					"name" : "y_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "y_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "y_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "y_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SRC_UC[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SelSRC",
 					"strict" : false
 				},
 				{
@@ -328,7 +400,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SelSRC",
+					"name" : "SRC_UC[4]",
 					"strict" : false
 				},
 				{
@@ -340,35 +412,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SRC_UC[2]",
-					"strict" : false
-				},
-				{
-					"name" : "SRC_UC[4]",
-					"strict" : false
-				},
-				{
-					"name" : "Fx[0]",
-					"strict" : false
-				},
-				{
-					"name" : "Fx[1]",
-					"strict" : false
-				},
-				{
-					"name" : "Fx[2]",
-					"strict" : false
-				},
-				{
-					"name" : "Fx[3]",
-					"strict" : false
-				},
-				{
-					"name" : "Fx[4]",
-					"strict" : false
-				},
-				{
-					"name" : "Fx[5]",
+					"name" : "Fx[7]",
 					"strict" : false
 				},
 				{
@@ -376,43 +420,27 @@
 					"strict" : false
 				},
 				{
-					"name" : "Fx[7]",
+					"name" : "Fx[5]",
 					"strict" : false
 				},
 				{
-					"name" : "DST_UC[2]",
+					"name" : "Fx[4]",
 					"strict" : false
 				},
 				{
-					"name" : "SelDST",
+					"name" : "Fx[3]",
 					"strict" : false
 				},
 				{
-					"name" : "DST_UC[0]",
+					"name" : "Fx[2]",
 					"strict" : false
 				},
 				{
-					"name" : "DST_UC[3]",
+					"name" : "Fx[1]",
 					"strict" : false
 				},
 				{
-					"name" : "DST_UC[4]",
-					"strict" : false
-				},
-				{
-					"name" : "DST_UC[1]",
-					"strict" : false
-				},
-				{
-					"name" : "Cmd[2]",
-					"strict" : false
-				},
-				{
-					"name" : "Cmd[0]",
-					"strict" : false
-				},
-				{
-					"name" : "Cmd[1]",
+					"name" : "Fx[0]",
 					"strict" : false
 				},
 				{
@@ -424,15 +452,39 @@
 					"strict" : false
 				},
 				{
-					"name" : "Enable_r",
+					"name" : "DST_UC[0]",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS_IN[0]",
+					"name" : "SelDST",
 					"strict" : false
 				},
 				{
-					"name" : "SelMDR",
+					"name" : "DST_UC[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DST_UC[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DST_UC[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DST_UC[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Cmd[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Cmd[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Cmd[2]",
 					"strict" : false
 				},
 				{
@@ -440,31 +492,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS_IN[1]",
+					"name" : "Enable_t",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS_IN[2]",
+					"name" : "SelMDR",
 					"strict" : false
 				},
 				{
-					"name" : "DATA_BUS_IN[3]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_BUS_IN[4]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_BUS_IN[5]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_BUS_IN[6]",
-					"strict" : false
-				},
-				{
-					"name" : "DATA_BUS_IN[7]",
+					"name" : "Write_En",
 					"strict" : false
 				}
 			]
