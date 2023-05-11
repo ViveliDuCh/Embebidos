@@ -1,0 +1,23 @@
+SUBDESIGN RegLoad_17bits(
+	Reloj, Reset, Dato[16..0], Enable : INPUT;
+	Salida[16..0] : OUTPUT;
+)
+
+VARIABLE
+R[16..0] : DFF;
+
+BEGIN
+	
+	R[].(clk,clrn) = (Reloj,!Reset);
+	
+	IF (Enable == VCC) THEN
+		
+			R[] = Dato[];
+		
+	ELSE 
+		R[].D = R[].Q;
+		
+	END IF;
+	
+	Salida[] = R[];
+END;

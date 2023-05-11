@@ -1,18 +1,18 @@
-Fitter Status : Successful - Tue May 09 18:45:39 2023
+Fitter Status : Successful - Wed May 10 20:51:06 2023
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : ArchivoRegistros
 Top-level Entity Name : MiQRObio
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 548 / 49,760 ( 1 % )
-    Total combinational functions : 533 / 49,760 ( 1 % )
-    Dedicated logic registers : 122 / 49,760 ( < 1 % )
-Total registers : 122
-Total pins : 125 / 360 ( 35 % )
+Total logic elements : 881 / 49,760 ( 2 % )
+    Total combinational functions : 860 / 49,760 ( 2 % )
+    Dedicated logic registers : 168 / 49,760 ( < 1 % )
+Total registers : 168
+Total pins : 198 / 360 ( 55 % )
 Total virtual pins : 0
 Total memory bits : 2,048 / 1,677,312 ( < 1 % )
-Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Embedded Multiplier 9-bit elements : 1 / 288 ( < 1 % )
 Total PLLs : 0 / 4 ( 0 % )
 UFM blocks : 0 / 1 ( 0 % )
 ADC blocks : 0 / 2 ( 0 % )

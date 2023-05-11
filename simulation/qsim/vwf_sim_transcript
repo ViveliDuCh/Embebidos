@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ArchivoRegistros -c ArchivoRegistros --vector_source="D:/Embebidos/Quartus Programs/ArchivoRegistros2/Waveform5.vwf" --testbench_file="D:/Embebidos/Quartus Programs/ArchivoRegistros2/simulation/qsim/Waveform5.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ArchivoRegistros -c ArchivoRegistros --vector_source="C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/Waveform11.vwf" --testbench_file="C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim/Waveform11.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -25,19 +25,17 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Sun Mar 26 23:55:48 2023
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ArchivoRegistros -c ArchivoRegistros --vector_source="D:/Embebidos/Quartus Programs/ArchivoRegistros2/Waveform5.vwf" --testbench_file="D:/Embebidos/Quartus Programs/ArchivoRegistros2/simulation/qsim/Waveform5.vwf.vt"
+    Info: Processing started: Wed May 10 15:01:35 2023
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ArchivoRegistros -c ArchivoRegistros --vector_source="C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/Waveform11.vwf" --testbench_file="C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim/Waveform11.vwf.vht"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
-bench files
-
-Completed successfully. 
+ bench files
 
 Completed successfully. 
 
 **** Generating the functional simulation netlist ****
 
-quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/Embebidos/Quartus Programs/ArchivoRegistros2/simulation/qsim/" ArchivoRegistros -c ArchivoRegistros
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim/" ArchivoRegistros -c ArchivoRegistros
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -55,21 +53,21 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Sun Mar 26 23:55:49 2023
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/Embebidos/Quartus Programs/ArchivoRegistros2/simulation/qsim/" ArchivoRegistros -c ArchivoRegistros
+    Info: Processing started: Wed May 10 15:01:37 2023
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim/" ArchivoRegistros -c ArchivoRegistros
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file ArchivoRegistros.vo in folder "D:/Embebidos/Quartus Programs/ArchivoRegistros2/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file ArchivoRegistros.vho in folder "C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4633 megabytes
-    Info: Processing ended: Sun Mar 26 23:55:50 2023
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4650 megabytes
+    Info: Processing ended: Wed May 10 15:01:39 2023
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 Completed successfully. 
 
 **** Generating the ModelSim .do script ****
 
-D:/Embebidos/Quartus Programs/ArchivoRegistros2/simulation/qsim/ArchivoRegistros.do generated.
+C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim/ArchivoRegistros.do generated.
 
 Completed successfully. 
 
@@ -83,67 +81,82 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # 10.5b
 
 # do ArchivoRegistros.do
-
 # ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:55:51 on Mar 26,2023
-# vlog -work work ArchivoRegistros.vo 
-# -- Compiling module ArchivoRegistros
-# -- Compiling module hard_block
 
-# 
-# Top level modules:
-# 	ArchivoRegistros
-# End time: 23:55:51 on Mar 26,2023, Elapsed time: 0:00:00
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:01:40 on May 10,2023
+# vcom -work work ArchivoRegistros.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package fiftyfivenm_atom_pack
+# -- Loading package fiftyfivenm_components
+# -- Compiling entity hard_block
+# -- Compiling architecture structure of hard_block
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Compiling entity MiQRObio
+# -- Compiling architecture structure of MiQRObio
+
+# End time: 15:01:40 on May 10,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:55:51 on Mar 26,2023
-# vlog -work work Waveform5.vwf.vt 
-# -- Compiling module ArchivoRegistros_vlg_vec_tst
-# 
-# Top level modules:
-# 	ArchivoRegistros_vlg_vec_tst
-# End time: 23:55:51 on Mar 26,2023, Elapsed time: 0:00:00
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:01:40 on May 10,2023
+# vcom -work work Waveform11.vwf.vht 
+
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MiQRObio_vhd_vec_tst
+# -- Compiling architecture MiQRObio_arch of MiQRObio_vhd_vec_tst
+# End time: 15:01:40 on May 10,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
-# vsim -novopt -c -t 1ps -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.ArchivoRegistros_vlg_vec_tst 
-# Start time: 23:55:51 on Mar 26,2023
-# Loading work.ArchivoRegistros_vlg_vec_tst
-# Loading work.ArchivoRegistros
-# Loading work.hard_block
-# Loading fiftyfivenm_ver.fiftyfivenm_lcell_comb
-# Loading fiftyfivenm_ver.fiftyfivenm_io_obuf
-# Loading fiftyfivenm_ver.fiftyfivenm_io_ibuf
-# Loading fiftyfivenm_ver.fiftyfivenm_clkctrl
-# Loading fiftyfivenm_ver.fiftyfivenm_mux41
-# Loading fiftyfivenm_ver.fiftyfivenm_ena_reg
-# Loading altera_ver.dffeas
-# Loading fiftyfivenm_ver.fiftyfivenm_unvm
-# Loading fiftyfivenm_ver.fiftyfivenm_adcblock
-# Loading altera_ver.PRIM_GDFF_LOW
-# ** Warning: (vsim-3017) ArchivoRegistros.vo(4984): [TFMPC] - Too few port connections. Expected 8, found 7.
-#    Time: 0 ps  Iteration: 0  Instance: /ArchivoRegistros_vlg_vec_tst/i1/\~QUARTUS_CREATED_ADC1~  File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/fiftyfivenm_atoms.v
-# ** Warning: (vsim-3722) ArchivoRegistros.vo(4984): [TFMPC] - Missing connection for port 'clk_dft'.
-# ** Warning: (vsim-3017) ArchivoRegistros.vo(5007): [TFMPC] - Too few port connections. Expected 8, found 7.
-#    Time: 0 ps  Iteration: 0  Instance: /ArchivoRegistros_vlg_vec_tst/i1/\~QUARTUS_CREATED_ADC2~  File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/fiftyfivenm_atoms.v
-# ** Warning: (vsim-3722) ArchivoRegistros.vo(5007): [TFMPC] - Missing connection for port 'clk_dft'.
-# after#26
-# ** Note: $finish    : Waveform5.vwf.vt(66)
-#    Time: 1 us  Iteration: 0  Instance: /ArchivoRegistros_vlg_vec_tst
-# End time: 23:55:52 on Mar 26,2023, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 4
+# vsim -novopt -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.MiQRObio_vhd_vec_tst 
+# Start time: 15:01:40 on May 10,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.miqrobio_vhd_vec_tst(miqrobio_arch)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading altera.dffeas_pack
+# Loading altera.altera_primitives_components
+# Loading fiftyfivenm.fiftyfivenm_atom_pack(body)
+# Loading fiftyfivenm.fiftyfivenm_components
+# Loading work.miqrobio(structure)
+# Loading work.hard_block(structure)
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)
+# Loading fiftyfivenm.fiftyfivenm_io_obuf(behavior)
+# Loading fiftyfivenm.fiftyfivenm_io_ibuf(behavior)
+# Loading fiftyfivenm.fiftyfivenm_clkctrl(vital_clkctrl)
+# Loading fiftyfivenm.fiftyfivenm_ena_reg(behave)
+# Loading altera.dffeas(vital_dffeas)
+# Loading fiftyfivenm.fiftyfivenm_ram_block(block_arch)
+# Loading fiftyfivenm.fiftyfivenm_ram_register(reg_arch)
+# Loading fiftyfivenm.fiftyfivenm_ram_pulse_generator(pgen_arch)
+# Loading fiftyfivenm.fiftyfivenm_unvm(behavior)
+# Loading fiftyfivenm.fiftyfivenm_adcblock(behavior)
+# ** Warning: Design size of 88798 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# after#35
+
+# End time: 15:01:41 on May 10,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading D:/Embebidos/Quartus Programs/ArchivoRegistros2/Waveform5.vwf...
+Reading C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/Waveform11.vwf...
 
-Reading D:/Embebidos/Quartus Programs/ArchivoRegistros2/simulation/qsim/ArchivoRegistros.msim.vcd...
+Reading C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim/ArchivoRegistros.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to D:/Embebidos/Quartus Programs/ArchivoRegistros2/simulation/qsim/ArchivoRegistros_20230326235552.sim.vwf
+Writing the resulting VWF to C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim/ArchivoRegistros_20230510150141.sim.vwf
 
 Finished VCD to VWF conversion.
 

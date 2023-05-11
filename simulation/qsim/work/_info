@@ -7,35 +7,36 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Proyectos/SISTEMAS EMBEBIDOS/ArchivoRegistros/simulation/qsim
+dC:/Proyectos/SISTEMAS EMBEBIDOS/ArchivoRegistros/simulation/qsim
 Earchivoregistros
-Z1 w1679685856
-Z2 DPx11 fiftyfivenm 21 fiftyfivenm_atom_pack 0 22 7d5Xo;QBOkc31OfQTzSXV0
-Z3 DPx11 fiftyfivenm 22 fiftyfivenm_components 0 22 IfY7Mh2WPBc;@7U@3<I^[0
-Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
-Z5 DPx6 altera 11 dffeas_pack 0 22 :S1C`o89Vbe5bV6`:6CaB3
-Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
-Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z8 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-Z9 DPx6 altera 28 altera_primitives_components 0 22 z?[99Tn<@QGNik3V1c6ah1
-R0
+Z0 w1683750474
+Z1 DPx11 fiftyfivenm 21 fiftyfivenm_atom_pack 0 22 7d5Xo;QBOkc31OfQTzSXV0
+Z2 DPx11 fiftyfivenm 22 fiftyfivenm_components 0 22 IfY7Mh2WPBc;@7U@3<I^[0
+Z3 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z4 DPx6 altera 11 dffeas_pack 0 22 :S1C`o89Vbe5bV6`:6CaB3
+Z5 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z8 DPx6 altera 28 altera_primitives_components 0 22 z?[99Tn<@QGNik3V1c6ah1
+Z9 dC:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim
 Z10 8ArchivoRegistros.vho
 Z11 FArchivoRegistros.vho
 l0
 L90
-V=I:6A`R_]E1dh5@9lindz0
-!s100 EDEXZG:mR;SWF6X?]]DHA2
+VH8g;EV9iDZ]j@eaL5]YRg3
+!s100 ><z7HP@BPTQ_CVk2T_G8a1
 Z12 OV;C;10.5b;63
 32
-Z13 !s110 1679685857
+!s110 1683750475
 !i10b 1
-Z14 !s108 1679685857.000000
-Z15 !s90 -work|work|ArchivoRegistros.vho|
-Z16 !s107 ArchivoRegistros.vho|
+Z13 !s108 1683750475.000000
+Z14 !s90 -work|work|ArchivoRegistros.vho|
+Z15 !s107 ArchivoRegistros.vho|
 !i113 1
-Z17 o-work work
-Z18 tExplicit 1 CvgOpt 0
+Z16 o-work work
+Z17 tExplicit 1 CvgOpt 0
 Astructure
+R1
 R2
 R3
 R4
@@ -43,22 +44,21 @@ R5
 R6
 R7
 R8
-R9
-DEx4 work 16 archivoregistros 0 22 =I:6A`R_]E1dh5@9lindz0
-l501
-L187
-Vc<3@I]bg?zOX9I1l2NI?[0
-!s100 o2[fPkaZnfHz0MCK15QD82
+DEx4 work 16 archivoregistros 0 22 H8g;EV9iDZ]j@eaL5]YRg3
+l1132
+L278
+V30G:a?EKO6mbZAa]gcdG11
+!s100 AN[XzMoH6F]>9TlMUQmED0
 R12
 32
-R13
+Z18 !s110 1683750476
 !i10b 1
+R13
 R14
 R15
-R16
 !i113 1
+R16
 R17
-R18
 vArchivoRegistros
 Z19 !s110 1679896551
 !i10b 1
@@ -66,60 +66,60 @@ Z19 !s110 1679896551
 ICnoF0k>nSQ4Bm2D0XjdoE0
 Z20 VDg1SIo80bB@j0V0VzS_@n1
 Z21 dD:/Embebidos/Quartus Programs/ArchivoRegistros2/simulation/qsim
-Z22 w1679896550
-Z23 8ArchivoRegistros.vo
-Z24 FArchivoRegistros.vo
+w1679896550
+8ArchivoRegistros.vo
+FArchivoRegistros.vo
 L0 31
-Z25 OV;L;10.5b;63
+Z22 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z26 !s108 1679896551.000000
-Z27 !s107 ArchivoRegistros.vo|
-Z28 !s90 -work|work|ArchivoRegistros.vo|
+Z23 !s108 1679896551.000000
+!s107 ArchivoRegistros.vo|
+!s90 -work|work|ArchivoRegistros.vo|
 !i113 1
-R17
-Z29 tCvgOpt 0
+R16
+Z24 tCvgOpt 0
 n@archivo@registros
 Earchivoregistros_vhd_vec_tst
-Z30 w1679685854
+Z25 w1683750472
+R6
 R7
-R8
-R0
-Z31 8Waveform2.vwf.vht
-Z32 FWaveform2.vwf.vht
+R9
+Z26 8Waveform11.vwf.vht
+Z27 FWaveform11.vwf.vht
 l0
 L31
 VzJSineIWK@H]4cTNQ<HF^1
 !s100 a_neDEmJc[S<H=BLLdVeR0
 R12
 32
-R13
-!i10b 1
-R14
-Z33 !s90 -work|work|Waveform2.vwf.vht|
-Z34 !s107 Waveform2.vwf.vht|
-!i113 1
-R17
 R18
+!i10b 1
+Z28 !s108 1683750476.000000
+Z29 !s90 -work|work|Waveform11.vwf.vht|
+Z30 !s107 Waveform11.vwf.vht|
+!i113 1
+R16
+R17
 Aarchivoregistros_arch
+R6
 R7
-R8
 DEx4 work 28 archivoregistros_vhd_vec_tst 0 22 zJSineIWK@H]4cTNQ<HF^1
-l66
+l94
 L33
-V>XO7hzC9gY9WE9W1nXLOV1
-!s100 DEnkE^bd1Kd7eABHYSSCH0
+V:dVzhifORBZPlVLc7ZTHZ0
+!s100 721QeL5hK1fUgMDD_mV==0
 R12
 32
-R13
-!i10b 1
-R14
-R33
-R34
-!i113 1
-R17
 R18
+!i10b 1
+R28
+R29
+R30
+!i113 1
+R16
+R17
 vArchivoRegistros_vlg_vec_tst
 R19
 !i10b 1
@@ -131,35 +131,151 @@ w1679896549
 8Waveform5.vwf.vt
 FWaveform5.vwf.vt
 L0 29
-R25
+R22
 r1
 !s85 0
 31
-R26
+R23
 !s107 Waveform5.vwf.vt|
 !s90 -work|work|Waveform5.vwf.vt|
 !i113 1
-R17
-R29
-n@archivo@registros_vlg_vec_tst
-vhard_block
-R19
-!i10b 1
-!s100 _SPYFTMJPO<UCjnLMWJ@]1
-I2onBAb9^358_[5g0hkZF31
-R20
-R21
-R22
-R23
+R16
 R24
-L0 5127
-R25
-r1
-!s85 0
-31
+n@archivo@registros_vlg_vec_tst
+Ehard_block
+Z31 w1683752499
+R3
+R1
+R5
+R6
+R7
+R2
+R9
+R10
+R11
+l0
+L34
+V8_BbEmGd;OHS6h@;gFc7W3
+!s100 ROH=D<N4CT6aCZ<37A[_?0
+R12
+32
+Z32 !s110 1683752500
+!i10b 1
+Z33 !s108 1683752500.000000
+R14
+R15
+!i113 1
+R16
+R17
+Astructure
+R3
+R1
+R5
+R6
+R7
+R2
+DEx4 work 10 hard_block 0 22 8_BbEmGd;OHS6h@;gFc7W3
+l75
+L53
+Vg=W`CQ>24lhYF71zFSkY43
+!s100 zW6ML5NVY?Ai`]`n2XhME3
+R12
+32
+R32
+!i10b 1
+R33
+R14
+R15
+!i113 1
+R16
+R17
+Emiqrobio
+R31
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+l0
+L90
+VZ1IcZ>9RYJc4T]0ASIjB>3
+!s100 :[=4fzSOkOG[bTh5FeBaG2
+R12
+32
+R32
+!i10b 1
+R33
+R14
+R15
+!i113 1
+R16
+R17
+Astructure
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+DEx4 work 8 miqrobio 0 22 Z1IcZ>9RYJc4T]0ASIjB>3
+l1137
+L271
+VH>V5F2PF6BWgnU5:>U>`52
+!s100 haMj]9a4KHJ7cVYWm3NP?3
+R12
+32
+R32
+!i10b 1
+R33
+R14
+R15
+!i113 1
+R16
+R17
+Emiqrobio_vhd_vec_tst
+Z34 w1683752497
+R6
+R7
+R9
 R26
 R27
-R28
-!i113 1
-R17
+l0
+L31
+VM1z>QanBHW9jOcz<S`7Qe2
+!s100 OGVCXdOCHidXRXnjQR_;Y1
+R12
+32
+R32
+!i10b 1
+R33
 R29
+R30
+!i113 1
+R16
+R17
+Amiqrobio_arch
+R6
+R7
+Z35 DEx4 work 20 miqrobio_vhd_vec_tst 0 22 M1z>QanBHW9jOcz<S`7Qe2
+l94
+L33
+Vd6_CzEfQDh0Y>>?RfP:2a2
+!s100 JXaez3IZZbTBFJ4dRZm;n3
+R12
+32
+R32
+!i10b 1
+R33
+R29
+R30
+!i113 1
+R16
+R17
