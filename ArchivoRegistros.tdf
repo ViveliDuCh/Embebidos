@@ -2,10 +2,10 @@ FUNCTION RegUnivEn (Reloj, Reset, Dato[7..0], Cmd [2..0], Enable)
 	RETURNS (Salida[7..0]);
 
 
-FUNCTION RegLoad (Reloj, Reset, Dato[7..0], Load, Enable)
+FUNCTION RegLoad (Reloj, Reset, Dato[7..0],Cmd [2..0], Enable)
 	RETURNS (Salida[7..0]);
 	
-FUNCTION RegLoad_17bits (Reloj, Reset, Dato[16..0], Enable)
+FUNCTION RegLoad_17bits (Reloj, Reset, Dato[16..0], Cmd [2..0], Enable)
 	RETURNS (Salida[16..0]);
 
 	
@@ -17,8 +17,8 @@ FUNCTION ALU_final( Reloj, Reset, Enable, A[7..0], B[7..0], Operation[2..0])
 
 
 SUBDESIGN ArchivoRegistros(
-	Reloj, Reset, Fx[7..0],SelOp[2..0], SelDST, SelSRC, SelMAR, SelMDR, Cmd[2..0], DST_UC[4..0], SRC_UC[4..0], DATA_BUS_IN[7..0]: INPUT;
-	SRC_t[7..0],DST_t[7..0],Ax_t[7..0], Bx_t[7..0],Cx_t[7..0],Dx_t[7..0],Ex_t[7..0],x_t[7..0],y_t[7..0],r_t[16..0],res_t[7..0], ALU_t[16..0], Bus_t[7..0],Flags_t[7..0],PC_t[7..0], MAR_t[7..0],MDR_t[7..0], IR_t[7..0],SelBus_t[4..0], DATA_BUS_OUT[7..0], ADDR_BUS[7..0]: OUTPUT;
+	Reloj, Reset, Fx[7..0], Enable_flag,SelOp[2..0], SelDST, SelSRC, SelMAR, SelMDR, Cmd[2..0], DST_UC[4..0], SRC_UC[4..0], SelMAR_OUT, SelMDR_OUT, DATA_BUS_IN[7..0]: INPUT;
+	SRC_t[7..0],DST_t[7..0],Ax_t[7..0], Bx_t[7..0],Cx_t[7..0],Dx_t[7..0],Ex_t[7..0],x_t[7..0],y_t[7..0],r_t[16..0],res_t[7..0], ALU_t[16..0], Bus_t[7..0],Flags_t[7..0],PC_t[7..0], MAR_t[7..0],MDR_t[7..0], IR_t[7..0],SelBus_t[4..0], DATA_BUS_IN_t[7..0],DATA_BUS_OUT_t[7..0], ADDR_BUS_t[7..0], DATA_BUS_OUT[7..0], ADDR_BUS[7..0]: OUTPUT;
 )
 
 VARIABLE
@@ -86,7 +86,7 @@ DEFAULTS
 
 END DEFAULTS;
 
-	ALU.(Reloj, Reset, A[7..0], B[7..0], Operation[2..0]) = (Reloj, Reset, alu_x.Salida,alu_y.Salida, SelOp[2..0] );
+	ALU.(Reloj, Reset, Enable, A[7..0], B[7..0], Operation[2..0]) = (Reloj, Reset, Enable_flag, alu_x.Salida,alu_y.Salida, SelOp[2..0] );
 	FLAGS[0] = ALU.CarryOut; 
 	FLAGS[1] = ALU.Overflow;
 	FLAGS[2] = ALU.Zero;
@@ -105,28 +105,28 @@ END DEFAULTS;
 	Dx.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
 	
 % Registro de ALU%
-	alu_x.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
-	alu_y.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
+	alu_x.(Reloj, Reset, Dato[7..0], Cmd [2..0]) = (Reloj, Reset, BUS[7..0], Cmd [2..0]);
+	alu_y.(Reloj, Reset, Dato[7..0], Cmd [2..0]) = (Reloj, Reset, BUS[7..0], Cmd [2..0]);
 	
-	alu_r.(Reloj, Reset) = (Reloj, Reset);
+	alu_r.(Reloj, Reset,Cmd [2..0]) = (Reloj, Reset,Cmd [2..0]);
 	alu_r.Dato = ALU.Result;
 	alu_r.Enable = VCC;
 	
-	alu_res.(Reloj, Reset) = (Reloj, Reset);
+	alu_res.(Reloj, Reset,Cmd [2..0]) = (Reloj, Reset,Cmd [2..0]);
 	alu_res.Dato = ALU.Remain;
 	alu_res.Enable = VCC;
 	
 	
 % Registros destino y fuente%
-   DST.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
-	SRC.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
+   DST.(Reloj, Reset, Dato[7..0], Cmd [2..0]) = (Reloj, Reset, BUS[7..0], Cmd [2..0]);
+	SRC.(Reloj, Reset, Dato[7..0], Cmd [2..0]) = (Reloj, Reset, BUS[7..0], Cmd [2..0]);
 	
 % Registros de Trabajo con RAM%
 	PC.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
-	MAR.(Reloj, Reset) = (Reloj, Reset);
-	MDR.(Reloj, Reset) = (Reloj, Reset);
-	IR.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
-	BP.(Reloj, Reset, Dato[7..0]) = (Reloj, Reset, BUS[7..0]);
+	MAR.(Reloj, Reset, Cmd [2..0]) = (Reloj, Reset, Cmd [2..0]);
+	MDR.(Reloj, Reset, Cmd [2..0]) = (Reloj, Reset, Cmd [2..0]);
+	IR.(Reloj, Reset, Dato[7..0], Cmd [2..0]) = (Reloj, Reset, BUS[7..0], Cmd [2..0]);
+	BP.(Reloj, Reset, Dato[7..0], Cmd [2..0]) = (Reloj, Reset, BUS[7..0], Cmd [2..0]);
 	SP.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
 	SI.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
 	DI.(Reloj,Reset,Dato[7..0],Cmd [2..0]) = (Reloj, Reset, BUS[7..0],Cmd[2..0]);
@@ -139,6 +139,9 @@ END DEFAULTS;
 	Cx_t[] = Cx.Salida[];
 	Dx_t[] = Dx.Salida[];
 	Ex_t[] = Ex.Salida[];
+	
+	DST_t[4..0] = SelMUX[4..0];
+	SRC_t[4..0] = SelBus[4..0];
 	
 	x_t[] = alu_x.Salida[];
 	y_t[] = alu_y.Salida[];
@@ -156,10 +159,11 @@ END DEFAULTS;
 	
 	-- Salidas hacia la RAM
 	
-	ADDR_BUS[] = MAR.Salida[];
-	DATA_BUS_OUT[] = MDR.Salida[];
 	
-	%-----------------------------SELECTOR MAR ------------------------------------%
+	
+	
+	%-----------------------------SELECTOR MAR  ------------------------------------%
+	--Selecciona entrada
 	
 	IF (SelMAR == GND) THEN
 		MAR.Dato[] = PC.Salida[]; 
@@ -167,12 +171,25 @@ END DEFAULTS;
 		MAR.Dato[] = BUS[]; 
 	END IF;
 	
-		%-----------------------------SELECTOR MDR ------------------------------------%
+	--Selecciona salida
+	IF (SelMAR_OUT==VCC) THEN
+		ADDR_BUS[] = MAR.Salida[];
+		ADDR_BUS_t[] = ADDR_BUS[];
+	END IF;
 	
+		%-----------------------------SELECTOR MDR ------------------------------------%
+	-- Selecciona entrada
 	IF (SelMDR == GND) THEN
-		MDR.Dato[] = DATA_BUS_IN[]; 
+		MDR.Dato[] = DATA_BUS_IN[];
+		DATA_BUS_IN_t[] = DATA_BUS_IN[];
 	ELSE
 		MDR.Dato[] = BUS[]; 
+	END IF;
+	
+	--Selecciona salida
+	IF(SelMDR_OUT == VCC) THEN
+		DATA_BUS_OUT[] = MDR.Salida[];
+		DATA_BUS_OUT_t  = MDR.Salida[];
 	END IF;
 	
 	

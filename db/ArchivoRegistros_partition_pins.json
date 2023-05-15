@@ -4,6 +4,38 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "ADDR_BUS_t[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_BUS_t[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_BUS_t[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_BUS_t[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_BUS_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_BUS_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_BUS_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_BUS_t[0]",
+					"strict" : false
+				},
+				{
 					"name" : "ALU_t[16]",
 					"strict" : false
 				},
@@ -197,6 +229,70 @@
 				},
 				{
 					"name" : "Cx_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_IN_t[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_IN_t[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_IN_t[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_IN_t[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_IN_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_IN_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_IN_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_IN_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_OUT_t[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_OUT_t[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_OUT_t[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_OUT_t[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_OUT_t[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_OUT_t[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_OUT_t[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_BUS_OUT_t[0]",
 					"strict" : false
 				},
 				{
@@ -668,6 +764,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "SelMAR_OUT",
+					"strict" : false
+				},
+				{
 					"name" : "SelOp[0]",
 					"strict" : false
 				},
@@ -680,7 +780,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SRC_UC[3]",
+					"name" : "SRC_UC[1]",
 					"strict" : false
 				},
 				{
@@ -688,19 +788,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "SRC_UC[0]",
+					"strict" : false
+				},
+				{
 					"name" : "SRC_UC[2]",
 					"strict" : false
 				},
 				{
-					"name" : "SRC_UC[1]",
+					"name" : "SRC_UC[3]",
 					"strict" : false
 				},
 				{
 					"name" : "SRC_UC[4]",
-					"strict" : false
-				},
-				{
-					"name" : "SRC_UC[0]",
 					"strict" : false
 				},
 				{
@@ -736,15 +836,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "Reloj",
+					"name" : "SelMDR",
 					"strict" : false
 				},
 				{
-					"name" : "Reset",
-					"strict" : false
-				},
-				{
-					"name" : "DST_UC[0]",
+					"name" : "SelMDR_OUT",
 					"strict" : false
 				},
 				{
@@ -752,15 +848,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "DST_UC[1]",
-					"strict" : false
-				},
-				{
 					"name" : "DST_UC[4]",
-					"strict" : false
-				},
-				{
-					"name" : "DST_UC[2]",
 					"strict" : false
 				},
 				{
@@ -768,7 +856,27 @@
 					"strict" : false
 				},
 				{
-					"name" : "Cmd[1]",
+					"name" : "DST_UC[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DST_UC[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DST_UC[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SelMAR",
+					"strict" : false
+				},
+				{
+					"name" : "Reloj",
+					"strict" : false
+				},
+				{
+					"name" : "Reset",
 					"strict" : false
 				},
 				{
@@ -780,15 +888,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "SelMDR",
-					"strict" : false
-				},
-				{
-					"name" : "SelMAR",
+					"name" : "Cmd[1]",
 					"strict" : false
 				},
 				{
 					"name" : "Write_En",
+					"strict" : false
+				},
+				{
+					"name" : "Enable_flag",
 					"strict" : false
 				}
 			]

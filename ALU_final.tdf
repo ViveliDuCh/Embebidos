@@ -2,7 +2,7 @@ FUNCTION Divi(A[7..0], B[7..0])
 	RETURNS (ResDiv[7..0], Remain[7..0]);
 
 SUBDESIGN ALU_final(
-	Reloj, Reset, A[7..0], B[7..0], Operation[2..0] : INPUT;
+	Reloj, Reset, Enable, A[7..0], B[7..0], Operation[2..0] : INPUT;
 	CarryOut, Overflow, Zero, Negative, AgtB, AstB, AeqB, Error, Result[16..0], Remain[7..0]: OUTPUT;
 )
 
@@ -13,7 +13,7 @@ VARIABLE
 	
 BEGIN 
 	
-	Flags[].(clk, clrn) = (Reloj, !Reset);
+	Flags[].(clk, clrn, ena) = (Reloj, !Reset, Enable);
 	
 	
 	IF (A[] == B[]) THEN

@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ArchivoRegistros -c ArchivoRegistros --vector_source="C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/Waveform11.vwf" --testbench_file="C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim/Waveform11.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ArchivoRegistros -c ArchivoRegistros --vector_source="C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/Waveform.vwf" --testbench_file="C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim/Waveform.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -25,11 +25,11 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Wed May 10 15:01:35 2023
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ArchivoRegistros -c ArchivoRegistros --vector_source="C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/Waveform11.vwf" --testbench_file="C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim/Waveform11.vwf.vht"
+    Info: Processing started: Thu May 11 16:59:10 2023
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ArchivoRegistros -c ArchivoRegistros --vector_source="C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/Waveform.vwf" --testbench_file="C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim/Waveform.vwf.vht"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
- bench files
+iles
 
 Completed successfully. 
 
@@ -53,15 +53,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Wed May 10 15:01:37 2023
+    Info: Processing started: Thu May 11 16:59:11 2023
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim/" ArchivoRegistros -c ArchivoRegistros
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file ArchivoRegistros.vho in folder "C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4650 megabytes
-    Info: Processing ended: Wed May 10 15:01:39 2023
+    Info: Processing ended: Thu May 11 16:59:13 2023
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
 
@@ -77,14 +77,14 @@ C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/vsim -c -do ArchivoRegistros.do
 
 Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 
-
 # 10.5b
+
 
 # do ArchivoRegistros.do
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:01:40 on May 10,2023
+# Start time: 16:59:13 on May 11,2023
 # vcom -work work ArchivoRegistros.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -100,22 +100,23 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # -- Compiling entity MiQRObio
 # -- Compiling architecture structure of MiQRObio
 
-# End time: 15:01:40 on May 10,2023, Elapsed time: 0:00:00
+# End time: 16:59:14 on May 11,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:01:40 on May 10,2023
-# vcom -work work Waveform11.vwf.vht 
 
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:59:14 on May 11,2023
+# vcom -work work Waveform.vwf.vht 
 # -- Loading package STANDARD
+
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity MiQRObio_vhd_vec_tst
 # -- Compiling architecture MiQRObio_arch of MiQRObio_vhd_vec_tst
-# End time: 15:01:40 on May 10,2023, Elapsed time: 0:00:00
+# End time: 16:59:14 on May 11,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.MiQRObio_vhd_vec_tst 
-# Start time: 15:01:40 on May 10,2023
+# Start time: 16:59:14 on May 11,2023
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -137,26 +138,45 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # Loading fiftyfivenm.fiftyfivenm_ram_block(block_arch)
 # Loading fiftyfivenm.fiftyfivenm_ram_register(reg_arch)
 # Loading fiftyfivenm.fiftyfivenm_ram_pulse_generator(pgen_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading fiftyfivenm.fiftyfivenm_mac_mult(vital_fiftyfivenm_mac_mult)
+# Loading fiftyfivenm.fiftyfivenm_mac_data_reg(vital_fiftyfivenm_mac_data_reg)
+# Loading fiftyfivenm.fiftyfivenm_mac_sign_reg(fiftyfivenm_mac_sign_reg)
+# Loading fiftyfivenm.fiftyfivenm_mac_mult_internal(vital_fiftyfivenm_mac_mult_internal)
+# Loading fiftyfivenm.fiftyfivenm_mac_out(vital_fiftyfivenm_mac_out)
 # Loading fiftyfivenm.fiftyfivenm_unvm(behavior)
 # Loading fiftyfivenm.fiftyfivenm_adcblock(behavior)
-# ** Warning: Design size of 88798 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 138830 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#35
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /miqrobio_vhd_vec_tst/i1/\inst|ALU|op_5|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /miqrobio_vhd_vec_tst/i1/\inst|ALU|op_5|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /miqrobio_vhd_vec_tst/i1/\inst|ALU|op_5|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /miqrobio_vhd_vec_tst/i1/\inst|ALU|op_5|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /miqrobio_vhd_vec_tst/i1/\inst|ALU|op_5|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 4  Instance: /miqrobio_vhd_vec_tst/i1/\inst|ALU|op_5|auto_generated|mac_mult1\/mac_multiply
 
-# End time: 15:01:41 on May 10,2023, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 1
+# End time: 16:59:15 on May 11,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 7
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/Waveform11.vwf...
+Reading C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/Waveform.vwf...
 
 Reading C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim/ArchivoRegistros.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim/ArchivoRegistros_20230510150141.sim.vwf
+Writing the resulting VWF to C:/Proyectos/SISTEMAS EMBEBIDOS/PROYECTO_FINAL/Embebidos/simulation/qsim/ArchivoRegistros_20230511165915.sim.vwf
 
 Finished VCD to VWF conversion.
 
