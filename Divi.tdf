@@ -1,0 +1,27 @@
+FUNCTION Division (
+	denom[7..0],
+	numer[7..0]
+)
+
+RETURNS (
+	quotient[7..0],
+	remain[7..0]
+);
+
+
+SUBDESIGN Divi(
+	A[7..0], B[7..0] : INPUT;
+	ResDiv[7..0], Remain[7..0] : OUTPUT;
+)
+
+VARIABLE
+	D : Division; 
+
+BEGIN 
+	D.denom[]=B[];
+	D.numer[]=A[];
+	
+	ResDiv[]=D.quotient[];
+	Remain[]=D.Remain[];
+
+END;

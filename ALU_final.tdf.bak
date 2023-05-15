@@ -1,0 +1,131 @@
+FUNCTION Divi(A[7..0], B[7..0])
+	RETURNS (ResDiv[7..0], Remain[7..0]);
+
+SUBDESIGN Alu(
+	Reloj, Reset, Enable, A[7..0], B[7..0], Operation[2..0] : INPUT;
+	CarryOut, Overflow, Zero, Negative, AgtB, AstB, AeqB, Error, Result[16..0], Remain[7..0]: OUTPUT;
+)
+
+VARIABLE 
+	Flags[7..0] : DFFE;
+	R[16..0] : NODE;
+	Division : Divi;
+	
+BEGIN 
+	
+	Flags[].(clk, clrn, ena) = (Reloj, !Reset, Enable);
+	
+	
+	IF (A[] == B[]) THEN
+		Flags[6] = VCC;
+	ELSIF (A[] >B[]) THEN
+		Flags[4] = VCC;
+	ELSE
+		Flags[5] = VCC;
+	END IF;
+	
+	CASE Operation[] is
+		%Suma%
+		WHEN 0 => 
+					 IF(A[] == 0 & B[] == 0) THEN
+						 Result[] = 0;
+					    Flags[2] = VCC;
+					 ELSE
+						 R[] = (GND, GND, GND, GND, GND, GND, GND, GND, GND, A[]) + (GND, GND, GND, GND, GND, GND, GND, GND, GND, B[]);
+						 Flags[2] = GND;
+						 Result[] = (GND, GND, GND, GND, GND, GND, GND, GND, R[8..0]);
+						 Flags[0] = R[8];
+					 END IF;
+					
+		%Resta%		
+		WHEN 1 => 
+					Result[] = ((GND, GND, GND, GND, GND, GND, GND, GND, GND, A[]) - (GND, GND, GND, GND, GND, GND, GND, GND, GND, B[]));
+					IF(B[]>A[]) THEN
+						Flags[3] = VCC;
+					ELSIF (Result[] == 0) THEN
+						Flags[2] = VCC;
+						Flags[3] = GND;
+					END IF;
+						 
+		%Multiplicacion%
+		WHEN 2 => 
+					R[] = (GND, GND, GND, GND, GND, GND, GND, GND, GND, A[]) * (GND, GND, GND, GND, GND, GND, GND, GND, GND, B[]);
+					Result[] = (GND, R[15..0]);
+					Flags[1] = R[16];
+					IF(Result[] == 0) THEN
+						Flags[2] = VCC;
+					ELSE
+						Flags[2] = GND;
+					END IF;
+					
+					IF(A[]>0 & B[]>0) THEN
+						Flags[3] = GND;
+					ELSIF (A[]<0 & B[]<0) THEN
+						Flags[3] = GND;
+					ELSE
+						Flags[3] = VCC;
+					END IF;
+						
+		%Division%
+		WHEN 3 => IF (A[]==0) THEN
+						Result[] = 0;
+						Remain[] = 0;
+						Flags[2] = VCC;
+					 ELSIF (B[] == 0) THEN
+						Flags[7] = VCC;
+					 ELSE
+						Division.A[] = A[];
+						Division.B[] = B[];
+						Result[] = (GND, GND, GND, GND, GND, GND, GND, GND, GND, Division.ResDiv[]);
+						Remain[] = Division.Remain[];
+					END IF;
+					
+					IF(A[]>0 & B[]>0) THEN
+						Flags[3] = GND;
+					ELSIF (A[]<0 & B[]<0) THEN
+						Flags[3] = GND;
+					ELSE
+						Flags[3] = VCC;
+					END IF;
+		
+		%AND%
+		WHEN 4 => Result[] = (GND, GND, GND, GND, GND, GND, GND, GND, GND, A[]) and (GND, GND, GND, GND, GND, GND, GND, GND, GND, B[]);
+					IF(Result[] == 0) THEN
+						Flags[2] = VCC;
+					ELSE
+						Flags[2] = GND;
+					END IF;
+					
+		%OR%
+		WHEN 5 => Result[] = (GND, GND, GND, GND, GND, GND, GND, GND, GND, A[]) or (GND, GND, GND, GND, GND, GND, GND, GND, GND, B[]);
+					IF(Result[] == 0) THEN
+						Flags[2] = VCC;
+					ELSE
+						Flags[2] = GND;
+					END IF;
+		
+		%NOT A%
+		WHEN 6 => Result[] = not (GND, GND, GND, GND, GND, GND, GND, GND, GND, A[]);
+					IF(Result[] == 0) THEN
+						Flags[2] = VCC;
+					ELSE
+						Flags[2] = GND;
+					END IF;
+		
+		%NAND%
+		WHEN 7 => Result[] = not ((GND, GND, GND, GND, GND, GND, GND, GND, GND, A[]) & (GND, GND, GND, GND, GND, GND, GND, GND, GND, B[]));
+					IF(Result[] == 0) THEN
+						Flags[2] = VCC;
+					ELSE
+						Flags[2] = GND;
+					END IF;
+	END CASE;
+		CarryOut = Flags[0];
+		Overflow = Flags[1];
+		Zero     = Flags[2];
+		Negative = Flags[3];
+		AgtB     = Flags[4];
+		AstB     = Flags[5];
+		AeqB     = Flags[6];
+		Error    = Flags[7];
+END;
