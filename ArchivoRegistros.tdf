@@ -17,7 +17,7 @@ FUNCTION ALU_final( Reloj, Reset, Enable, A[7..0], B[7..0], Operation[2..0])
 
 
 SUBDESIGN ArchivoRegistros(
-	Reloj, Reset, Fx[7..0], Enable_flag,SelOp[2..0], SelDST, SelSRC, SelMAR, SelMDR, Cmd[2..0], DST_UC[4..0], SRC_UC[4..0], SelMAR_OUT, SelMDR_OUT, DATA_BUS_IN[7..0]: INPUT;
+	Reloj, Reset, Fx[7..0], Enable_flag,SelOp[2..0],SelRHL, SelDST, SelSRC, SelMAR, SelMDR, Cmd[2..0], DST_UC[4..0], SRC_UC[4..0], SelMAR_OUT, SelMDR_OUT, DATA_BUS_IN[7..0]: INPUT;
 	SRC_t[7..0],DST_t[7..0],Ax_t[7..0], Bx_t[7..0],Cx_t[7..0],Dx_t[7..0],Ex_t[7..0],x_t[7..0],y_t[7..0],r_t[16..0],res_t[7..0], ALU_t[16..0], Bus_t[7..0],Flags_t[7..0],PC_t[7..0], MAR_t[7..0],MDR_t[7..0], IR_t[7..0],SelBus_t[4..0], DATA_BUS_IN_t[7..0],DATA_BUS_OUT_t[7..0], ADDR_BUS_t[7..0], DATA_BUS_OUT[7..0], ADDR_BUS[7..0]: OUTPUT;
 )
 
@@ -43,6 +43,8 @@ Ex : RegUnivEn;  % 4 %
 alu_x : RegLoad; % 6 %
 alu_y : RegLoad; % 7 %
 alu_r : RegLoad_17bits; % 8 %
+alu_rh : RegLoad;
+alu_rl : RegLoad;
 alu_res : RegLoad;
 
 % Registros destino y fuente%
@@ -111,6 +113,14 @@ END DEFAULTS;
 	alu_r.(Reloj, Reset,Cmd [2..0]) = (Reloj, Reset,Cmd [2..0]);
 	alu_r.Dato = ALU.Result;
 	alu_r.Enable = VCC;
+	
+	alu_rh.(Reloj, Reset,Cmd [2..0]) = (Reloj, Reset,Cmd [2..0]);
+	alu_rh.Dato = ALU.Result[15..8];
+	alu_rh.Enable = VCC;
+	
+	alu_rl.(Reloj, Reset,Cmd [2..0]) = (Reloj, Reset,Cmd [2..0]);
+	alu_rl.Dato = ALU.Result[7..0];
+	alu_rl.Enable = VCC;
 	
 	alu_res.(Reloj, Reset,Cmd [2..0]) = (Reloj, Reset,Cmd [2..0]);
 	alu_res.Dato = ALU.Remain;
@@ -214,7 +224,11 @@ END DEFAULTS;
 			BUS[] = Fx[];
 			
 		WHEN 8 =>
-			BUS[] = alu_r.Salida[7..0];
+			IF (SelRHL == GND) THEN
+				BUS[] = alu_rl.Salida[];
+			ELSE
+				BUS[] = alu_rh.Salida[];
+			END IF;
 			
 		WHEN 11 =>
 			BUS[] = PC.Salida[];
