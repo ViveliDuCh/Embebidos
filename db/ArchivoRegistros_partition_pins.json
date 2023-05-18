@@ -392,159 +392,159 @@
 					"strict" : false
 				},
 				{
-					"name" : "Flags[7]",
+					"name" : "Flags_t[7]",
 					"strict" : false
 				},
 				{
-					"name" : "Flags[6]",
+					"name" : "Flags_t[6]",
 					"strict" : false
 				},
 				{
-					"name" : "Flags[5]",
+					"name" : "Flags_t[5]",
 					"strict" : false
 				},
 				{
-					"name" : "Flags[4]",
+					"name" : "Flags_t[4]",
 					"strict" : false
 				},
 				{
-					"name" : "Flags[3]",
+					"name" : "Flags_t[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Flags[2]",
+					"name" : "Flags_t[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Flags[0]",
+					"name" : "Flags_t[0]",
 					"strict" : false
 				},
 				{
-					"name" : "IR[7]",
+					"name" : "IR_t[7]",
 					"strict" : false
 				},
 				{
-					"name" : "IR[6]",
+					"name" : "IR_t[6]",
 					"strict" : false
 				},
 				{
-					"name" : "IR[5]",
+					"name" : "IR_t[5]",
 					"strict" : false
 				},
 				{
-					"name" : "IR[4]",
+					"name" : "IR_t[4]",
 					"strict" : false
 				},
 				{
-					"name" : "IR[3]",
+					"name" : "IR_t[3]",
 					"strict" : false
 				},
 				{
-					"name" : "IR[2]",
+					"name" : "IR_t[2]",
 					"strict" : false
 				},
 				{
-					"name" : "IR[1]",
+					"name" : "IR_t[1]",
 					"strict" : false
 				},
 				{
-					"name" : "IR[0]",
+					"name" : "IR_t[0]",
 					"strict" : false
 				},
 				{
-					"name" : "MAR[7]",
+					"name" : "MAR_t[7]",
 					"strict" : false
 				},
 				{
-					"name" : "MAR[6]",
+					"name" : "MAR_t[6]",
 					"strict" : false
 				},
 				{
-					"name" : "MAR[5]",
+					"name" : "MAR_t[5]",
 					"strict" : false
 				},
 				{
-					"name" : "MAR[4]",
+					"name" : "MAR_t[4]",
 					"strict" : false
 				},
 				{
-					"name" : "MAR[3]",
+					"name" : "MAR_t[3]",
 					"strict" : false
 				},
 				{
-					"name" : "MAR[2]",
+					"name" : "MAR_t[2]",
 					"strict" : false
 				},
 				{
-					"name" : "MAR[1]",
+					"name" : "MAR_t[1]",
 					"strict" : false
 				},
 				{
-					"name" : "MAR[0]",
+					"name" : "MAR_t[0]",
 					"strict" : false
 				},
 				{
-					"name" : "MDR[7]",
+					"name" : "MDR_t[7]",
 					"strict" : false
 				},
 				{
-					"name" : "MDR[6]",
+					"name" : "MDR_t[6]",
 					"strict" : false
 				},
 				{
-					"name" : "MDR[5]",
+					"name" : "MDR_t[5]",
 					"strict" : false
 				},
 				{
-					"name" : "MDR[4]",
+					"name" : "MDR_t[4]",
 					"strict" : false
 				},
 				{
-					"name" : "MDR[3]",
+					"name" : "MDR_t[3]",
 					"strict" : false
 				},
 				{
-					"name" : "MDR[2]",
+					"name" : "MDR_t[2]",
 					"strict" : false
 				},
 				{
-					"name" : "MDR[1]",
+					"name" : "MDR_t[1]",
 					"strict" : false
 				},
 				{
-					"name" : "MDR[0]",
+					"name" : "MDR_t[0]",
 					"strict" : false
 				},
 				{
-					"name" : "PC[7]",
+					"name" : "PC_t[7]",
 					"strict" : false
 				},
 				{
-					"name" : "PC[6]",
+					"name" : "PC_t[6]",
 					"strict" : false
 				},
 				{
-					"name" : "PC[5]",
+					"name" : "PC_t[5]",
 					"strict" : false
 				},
 				{
-					"name" : "PC[4]",
+					"name" : "PC_t[4]",
 					"strict" : false
 				},
 				{
-					"name" : "PC[3]",
+					"name" : "PC_t[3]",
 					"strict" : false
 				},
 				{
-					"name" : "PC[2]",
+					"name" : "PC_t[2]",
 					"strict" : false
 				},
 				{
-					"name" : "PC[1]",
+					"name" : "PC_t[1]",
 					"strict" : false
 				},
 				{
-					"name" : "PC[0]",
+					"name" : "PC_t[0]",
 					"strict" : false
 				},
 				{
@@ -772,27 +772,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SelOp[2]",
-					"strict" : false
-				},
-				{
 					"name" : "SelOp[1]",
 					"strict" : false
 				},
 				{
-					"name" : "SRC_UC[1]",
-					"strict" : false
-				},
-				{
-					"name" : "SelSRC",
-					"strict" : false
-				},
-				{
-					"name" : "SRC_UC[0]",
-					"strict" : false
-				},
-				{
-					"name" : "SRC_UC[2]",
+					"name" : "SelOp[2]",
 					"strict" : false
 				},
 				{
@@ -800,7 +784,27 @@
 					"strict" : false
 				},
 				{
+					"name" : "SelSRC",
+					"strict" : false
+				},
+				{
+					"name" : "SRC_UC[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SRC_UC[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SRC_UC[1]",
+					"strict" : false
+				},
+				{
 					"name" : "SRC_UC[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SelRHL",
 					"strict" : false
 				},
 				{

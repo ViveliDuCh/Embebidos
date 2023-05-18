@@ -1,7 +1,7 @@
 # do ArchivoRegistros.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:59:13 on May 11,2023
+# Start time: 16:14:18 on May 15,2023
 # vcom -work work ArchivoRegistros.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -16,20 +16,20 @@
 # -- Loading package altera_primitives_components
 # -- Compiling entity MiQRObio
 # -- Compiling architecture structure of MiQRObio
-# End time: 16:59:14 on May 11,2023, Elapsed time: 0:00:01
+# End time: 16:14:18 on May 15,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:59:14 on May 11,2023
+# Start time: 16:14:18 on May 15,2023
 # vcom -work work Waveform.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity MiQRObio_vhd_vec_tst
 # -- Compiling architecture MiQRObio_arch of MiQRObio_vhd_vec_tst
-# End time: 16:59:14 on May 11,2023, Elapsed time: 0:00:00
+# End time: 16:14:19 on May 15,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vsim -novopt -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.MiQRObio_vhd_vec_tst 
-# Start time: 16:59:14 on May 11,2023
+# Start time: 16:14:19 on May 15,2023
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -75,5 +75,5 @@
 #    Time: 0 ps  Iteration: 3  Instance: /miqrobio_vhd_vec_tst/i1/\inst|ALU|op_5|auto_generated|mac_mult1\/mac_multiply
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 4  Instance: /miqrobio_vhd_vec_tst/i1/\inst|ALU|op_5|auto_generated|mac_mult1\/mac_multiply
-# End time: 16:59:15 on May 11,2023, Elapsed time: 0:00:01
+# End time: 16:14:20 on May 15,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 7
