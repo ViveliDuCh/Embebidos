@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Wed May 17 12:51:30 2023
+Analysis & Synthesis Status : Successful - Mon May 22 17:21:04 2023
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : ArchivoRegistros
 Top-level Entity Name : MiQRObio
 Family : MAX 10
-Total logic elements : 972
-    Total combinational functions : 932
+Total logic elements : 955
+    Total combinational functions : 915
     Dedicated logic registers : 168
 Total registers : 168
-Total pins : 226
+Total pins : 224
 Total virtual pins : 0
 Total memory bits : 2,048
 Embedded Multiplier 9-bit elements : 1
