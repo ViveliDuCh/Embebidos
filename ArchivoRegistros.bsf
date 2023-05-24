@@ -117,23 +117,9 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 240)
 		(input)
-		(text "SelMAR_OUT" (rect 0 0 62 12)(font "Arial" ))
-		(text "SelMAR_OUT" (rect 21 235 83 247)(font "Arial" ))
-		(line (pt 0 240)(pt 16 240)(line_width 1))
-	)
-	(port
-		(pt 0 256)
-		(input)
-		(text "SelMDR_OUT" (rect 0 0 61 12)(font "Arial" ))
-		(text "SelMDR_OUT" (rect 21 251 82 263)(font "Arial" ))
-		(line (pt 0 256)(pt 16 256)(line_width 1))
-	)
-	(port
-		(pt 0 272)
-		(input)
 		(text "DATA_BUS_IN[7..0]" (rect 0 0 89 12)(font "Arial" ))
-		(text "DATA_BUS_IN[7..0]" (rect 21 267 110 279)(font "Arial" ))
-		(line (pt 0 272)(pt 16 272)(line_width 3))
+		(text "DATA_BUS_IN[7..0]" (rect 21 235 110 247)(font "Arial" ))
+		(line (pt 0 240)(pt 16 240)(line_width 3))
 	)
 	(port
 		(pt 296 32)

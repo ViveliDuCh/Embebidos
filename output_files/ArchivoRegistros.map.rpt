@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ArchivoRegistros
-Wed May 17 12:51:30 2023
+Mon May 22 17:21:04 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -52,16 +52,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed May 17 12:51:30 2023       ;
+; Analysis & Synthesis Status        ; Successful - Mon May 22 17:21:04 2023       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; ArchivoRegistros                            ;
 ; Top-level Entity Name              ; MiQRObio                                    ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 972                                         ;
-;     Total combinational functions  ; 932                                         ;
+; Total logic elements               ; 955                                         ;
+;     Total combinational functions  ; 915                                         ;
 ;     Dedicated logic registers      ; 168                                         ;
 ; Total registers                    ; 168                                         ;
-; Total pins                         ; 226                                         ;
+; Total pins                         ; 224                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 2,048                                       ;
 ; Embedded Multiplier 9-bit elements ; 1                                           ;
@@ -227,31 +227,31 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 972         ;
+; Estimated Total logic elements              ; 955         ;
 ;                                             ;             ;
-; Total combinational functions               ; 932         ;
+; Total combinational functions               ; 915         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 560         ;
+;     -- 4 input functions                    ; 559         ;
 ;     -- 3 input functions                    ; 195         ;
-;     -- <=2 input functions                  ; 177         ;
+;     -- <=2 input functions                  ; 161         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 751         ;
+;     -- normal mode                          ; 734         ;
 ;     -- arithmetic mode                      ; 181         ;
 ;                                             ;             ;
 ; Total registers                             ; 168         ;
 ;     -- Dedicated logic registers            ; 168         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 226         ;
+; I/O pins                                    ; 224         ;
 ; Total memory bits                           ; 2048        ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 1           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; Reloj~input ;
 ; Maximum fan-out                             ; 176         ;
-; Total fan-out                               ; 4240        ;
-; Average fan-out                             ; 2.71        ;
+; Total fan-out                               ; 4202        ;
+; Average fan-out                             ; 2.73        ;
 +---------------------------------------------+-------------+
 
 
@@ -260,8 +260,8 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                          ; Entity Name         ; Library Name ;
 +----------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |MiQRObio                                          ; 932 (0)             ; 168 (0)                   ; 2048        ; 0          ; 1            ; 1       ; 0         ; 226  ; 0            ; 0          ; |MiQRObio                                                                                                                                                                                                    ; MiQRObio            ; work         ;
-;    |ArchivoRegistros:inst|                         ; 932 (151)           ; 168 (0)                   ; 0           ; 0          ; 1            ; 1       ; 0         ; 0    ; 0            ; 0          ; |MiQRObio|ArchivoRegistros:inst                                                                                                                                                                              ; ArchivoRegistros    ; work         ;
+; |MiQRObio                                          ; 915 (0)             ; 168 (0)                   ; 2048        ; 0          ; 1            ; 1       ; 0         ; 224  ; 0            ; 0          ; |MiQRObio                                                                                                                                                                                                    ; MiQRObio            ; work         ;
+;    |ArchivoRegistros:inst|                         ; 915 (134)           ; 168 (0)                   ; 0           ; 0          ; 1            ; 1       ; 0         ; 0    ; 0            ; 0          ; |MiQRObio|ArchivoRegistros:inst                                                                                                                                                                              ; ArchivoRegistros    ; work         ;
 ;       |ALU_final:ALU|                              ; 223 (147)           ; 7 (7)                     ; 0           ; 0          ; 1            ; 1       ; 0         ; 0    ; 0            ; 0          ; |MiQRObio|ArchivoRegistros:inst|ALU_final:ALU                                                                                                                                                                ; ALU_final           ; work         ;
 ;          |Divi:Division|                           ; 76 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MiQRObio|ArchivoRegistros:inst|ALU_final:ALU|Divi:Division                                                                                                                                                  ; Divi                ; work         ;
 ;             |Division:D|                           ; 76 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |MiQRObio|ArchivoRegistros:inst|ALU_final:ALU|Divi:Division|Division:D                                                                                                                                       ; Division            ; work         ;
@@ -551,27 +551,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 226                         ;
+; boundary_port         ; 224                         ;
 ; cycloneiii_ff         ; 168                         ;
 ;     CLR               ; 97                          ;
 ;     ENA CLR           ; 71                          ;
-; cycloneiii_lcell_comb ; 934                         ;
+; cycloneiii_lcell_comb ; 917                         ;
 ;     arith             ; 181                         ;
 ;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 108                         ;
 ;         3 data inputs ; 72                          ;
-;     normal            ; 753                         ;
+;     normal            ; 736                         ;
 ;         0 data inputs ; 9                           ;
 ;         1 data inputs ; 19                          ;
-;         2 data inputs ; 42                          ;
+;         2 data inputs ; 26                          ;
 ;         3 data inputs ; 123                         ;
-;         4 data inputs ; 560                         ;
+;         4 data inputs ; 559                         ;
 ; cycloneiii_mac_mult   ; 1                           ;
 ; cycloneiii_mac_out    ; 1                           ;
 ; cycloneiii_ram_block  ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 21.00                       ;
-; Average LUT depth     ; 7.44                        ;
+; Average LUT depth     ; 7.52                        ;
 +-----------------------+-----------------------------+
 
 
@@ -580,7 +580,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -590,7 +590,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed May 17 12:51:12 2023
+    Info: Processing started: Mon May 22 17:20:43 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ArchivoRegistros -c ArchivoRegistros
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -737,16 +737,16 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1217 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 35 input pins
+Info (21057): Implemented 1198 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 33 input pins
     Info (21059): Implemented 191 output pins
-    Info (21061): Implemented 982 logic cells
+    Info (21061): Implemented 965 logic cells
     Info (21064): Implemented 8 RAM segments
     Info (21062): Implemented 1 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 4846 megabytes
-    Info: Processing ended: Wed May 17 12:51:30 2023
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:34
+    Info: Peak virtual memory: 4842 megabytes
+    Info: Processing ended: Mon May 22 17:21:04 2023
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:38
 
 

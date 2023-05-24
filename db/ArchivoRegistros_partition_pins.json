@@ -764,19 +764,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "SelMAR_OUT",
-					"strict" : false
-				},
-				{
 					"name" : "SelOp[0]",
 					"strict" : false
 				},
 				{
-					"name" : "SelOp[1]",
+					"name" : "SelOp[2]",
 					"strict" : false
 				},
 				{
-					"name" : "SelOp[2]",
+					"name" : "SelOp[1]",
 					"strict" : false
 				},
 				{
@@ -841,10 +837,6 @@
 				},
 				{
 					"name" : "SelMDR",
-					"strict" : false
-				},
-				{
-					"name" : "SelMDR_OUT",
 					"strict" : false
 				},
 				{
