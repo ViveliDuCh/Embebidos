@@ -120,7 +120,7 @@ def printError(line, message):
     print("Error in line {}: {}".format(line, message))
     
 input_file = 'ensamblador/programa.txt'
-output_file = 'ensamblador/output.txt'
+output_file = 'ensamblador/output.bin'
 outputLines = []
 tags = {}
 
@@ -175,9 +175,9 @@ with open(input_file, 'r') as infile:
             errorCheck(operation, operationAddressing, operandCodes, operandAddressing, lineNumber)
             
             #Save output
-            outputLines.append(hex(operationCode))
-            outputLines.append(hex(operandCodes[0]))
-            outputLines.append(hex(operandCodes[1]))
+            outputLines.append(operationCode)
+            outputLines.append(operandCodes[0])
+            outputLines.append(operandCodes[1])
             
             #Debug output:
             print(line.strip())
@@ -200,11 +200,11 @@ infile.close()
 
 #Only writes output file if there are no errors
 if errorCounter == 0: 
-    with open(output_file, 'w') as outfile:
+    with open(output_file, 'wb') as outfile:
         # Write the lines to the output file
         for outputLine in outputLines:
-            outfile.write(outputLine)
-            outfile.write("\n")
+            print(outputLine)
+            outfile.write(outputLine.to_bytes(1,'little'))
             
     outfile.close()
 
