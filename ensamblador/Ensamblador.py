@@ -1,8 +1,32 @@
 import re 
 
 baseOpcodes = {
-        "MOV" : 0x00,
-        "ADD" : 0x0F
+        "READ" : 0x00,
+        "MOV"  : 0x08,
+        "WRT"  : 0x10,
+        "DIV"  : 0x18,
+        "MUL"  : 0x20,
+        "INC"  : 0x28,
+        "SUB"  : 0x30,
+        "NOT"  : 0x38,
+        "AND"  : 0x40,
+        "OR"   : 0x48,
+        "XOR"  : 0x50,
+        "JMP"  : 0x58,
+        "MOD"  : 0x60,
+        "EQU"  : 0x68,
+        "CMP"  : 0x70
+        }
+
+jumpCodes = {
+        "JMP"  : 0x58,
+        "JE"   : 0x59,
+        "JL"   : 0x5a,
+        "JG"   : 0x5b,
+        "JC"   : 0x5c,
+        "CALL" : 0x78,
+        "RET"  : 0x79,
+        "IRET" : 0x7a
         }
 
 opcodeOffsets = {

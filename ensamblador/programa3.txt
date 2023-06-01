@@ -1,0 +1,19 @@
+perro:
+MOV Ax, Bx
+RET
+
+
+MOV Ax, #10
+JMP hola
+hola:
+MOV Ax, Bx
+MOV Ax, [Bx]
+MOV Ax, [10]
+MOV Ax, @[Bx]
+MOV Ax, @[10]
+MOV Ax, @[Bx+3]
+CALL perro
+fin:
+
+
+
