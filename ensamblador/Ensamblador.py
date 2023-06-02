@@ -143,15 +143,54 @@ def errorCheck(operation, operationAddressing, operandCodes, operandAddressing, 
 def printError(line, message):
     print("Error in line {}: {}".format(line, message))
     
-input_file = 'ensamblador/programa.txt'
-output_file = 'ensamblador/output.txt'
+    
+def writeOutputFile(outputLines, output_file):
+    
+    with open(output_file, 'w') as outfile:
+            
+        output_header = """
+WIDTH=8;
+DEPTH=256;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=UNS;
+
+CONTENT BEGIN
+"""
+        
+        outfile.write(output_header)
+        
+        # Write the lines to the output file
+        i = 0
+        while i < len(outputLines):
+            
+            firstSpace = " " * (4-len(str(i)))
+            secondSpace = " " * (4-len(str(outputLines[i])))
+            outputLine = "    {}{}:{}{};".format(i,firstSpace,secondSpace,outputLines[i])
+            outfile.write(outputLine)
+            outfile.write("\n")
+            i+=1
+        
+        if i < 255:
+            outputLine = "    [{}..255]    :    0;".format(i)
+            outfile.write(outputLine)
+            outfile.write("\n")
+            
+        outfile.write("END;")      
+        
+    outfile.close()
+ 
+    
+    
+input_file = 'programa.txt'
+output_file = 'Memoria.mif'
 outputLines = []
 tags = {}
 
 with open(input_file) as infile:
     lineNumber = 1
     line= infile.readline()
-
+    
     while line != "":
         instruction = re.split(instructionSeparator,line.strip())
         if instruction[-1][-1] == ':':
@@ -199,18 +238,18 @@ with open(input_file, 'r') as infile:
             errorCheck(operation, operationAddressing, operandCodes, operandAddressing, lineNumber)
             
             #Save output
-            outputLines.append(hex(operationCode))
-            outputLines.append(hex(operandCodes[0]))
-            outputLines.append(hex(operandCodes[1]))
+            outputLines.append(operationCode)
+            outputLines.append(operandCodes[0])
+            outputLines.append(operandCodes[1])
             
             #Debug output:
             print(line.strip())
             #print(instruction)
             print(operandAddressing)
             print(operationAddressing)
-            print("OPC: {}".format(hex(operationCode)))
-            print("DST: {}".format(hex(operandCodes[0])))
-            print("SRC: {}".format(hex(operandCodes[1])))
+            print("OPC: {}".format(operationCode))
+            print("DST: {}".format(operandCodes[0]))
+            print("SRC: {}".format(operandCodes[1]))
             print("Errors: {}".format(errorCounter))
             print("\n")
         
@@ -224,12 +263,6 @@ infile.close()
 
 #Only writes output file if there are no errors
 if errorCounter == 0: 
-    with open(output_file, 'w') as outfile:
-        # Write the lines to the output file
-        for outputLine in outputLines:
-            outfile.write(outputLine)
-            outfile.write("\n")
-            
-    outfile.close()
+    writeOutputFile(outputLines, output_file)
 
 print(tags)
