@@ -24,6 +24,7 @@ jumpCodes = {
         "JL"   : 0x5a,
         "JG"   : 0x5b,
         "JC"   : 0x5c,
+        "JNZ"  : 0x5d,
         "CALL" : 0x78,
         "RET"  : 0x79,
         "IRET" : 0x7a

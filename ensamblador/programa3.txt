@@ -1,19 +1,15 @@
-perro:
-MOV Ax, Bx
-RET
+MOV AX, #1 		
+MOV BX, #10  		
+MOV CX, AX  		
+MOV DX, #0		
+sumatoria:		
+ADD DX, CX		
+INC CX		
+CMP CX, BX		
+JE sumatoria				
+fin:		
+JMP fin
 
-
-MOV Ax, #10
-JMP hola
-hola:
-MOV Ax, Bx
-MOV Ax, [Bx]
-MOV Ax, [10]
-MOV Ax, @[Bx]
-MOV Ax, @[10]
-MOV Ax, @[Bx+3]
-CALL perro
-fin:
 
 
 
