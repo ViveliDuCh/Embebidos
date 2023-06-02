@@ -1,15 +1,11 @@
-MOV AX, #1 		
-MOV BX, #10  		
-MOV CX, AX  		
-MOV DX, #0		
+MOV Ax, #1 		
+MOV Bx, #10  		
+MOV Cx, Ax  		
+MOV Dx, #0		
 sumatoria:		
-ADD DX, CX		
-INC CX		
-CMP CX, BX		
+ADD Dx, Cx		
+INC Cx		
+CMP Cx, Bx		
 JE sumatoria				
 fin:		
 JMP fin
-
-
-
-

@@ -6,7 +6,6 @@ baseOpcodes = {
         "WRT"  : 0x10,
         "DIV"  : 0x18,
         "MUL"  : 0x20,
-        "INC"  : 0x28,
         "SUB"  : 0x30,
         "NOT"  : 0x38,
         "AND"  : 0x40,
@@ -17,6 +16,10 @@ baseOpcodes = {
         "EQU"  : 0x68,
         "CMP"  : 0x70
         }
+
+baseOpcodes2 = {
+        "INC"  : 0x28,
+}
 
 jumpCodes = {
         "JMP"  : 0x58,
@@ -183,8 +186,8 @@ CONTENT BEGIN
  
     
     
-input_file = 'programa.txt'
-output_file = 'Memoria.mif'
+input_file = 'ensamblador/programa3.txt'
+output_file = 'ensamblador/Memoria2.mif'
 outputLines = []
 tags = {}
 
@@ -215,7 +218,7 @@ with open(input_file, 'r') as infile:
     
     while line != "":
         instruction = re.split(instructionSeparator,line.strip())
-        if len(instruction)>1:
+        if len(instruction)>2:
             
             operation = instruction[0]
             
@@ -236,6 +239,10 @@ with open(input_file, 'r') as infile:
             else: 
                 operationCode = 0xFFFF
             
+            #Debug output:
+            print(line.strip())
+
+
             errorCheck(operation, operationAddressing, operandCodes, operandAddressing, lineNumber)
             
             #Save output
@@ -243,8 +250,7 @@ with open(input_file, 'r') as infile:
             outputLines.append(operandCodes[0])
             outputLines.append(operandCodes[1])
             
-            #Debug output:
-            print(line.strip())
+            
             #print(instruction)
             print(operandAddressing)
             print(operationAddressing)
@@ -253,6 +259,35 @@ with open(input_file, 'r') as infile:
             print("SRC: {}".format(operandCodes[1]))
             print("Errors: {}".format(errorCounter))
             print("\n")
+        elif (len(instruction)>1):
+            operation = instruction[0]
+            tag = instruction[1]
+
+            if operation in jumpCodes:
+                operationCode = jumpCodes[operation] 
+
+                if tag in tags:
+                    tagCode = tags[tag] 
+                else: 
+                    tagCode=0xFF
+                    errorCounter += 1
+                    printError(lineNumber, "Jump destination not found.")
+            elif operation in baseOpcodes2:
+                operationCode = baseOpcodes2[operation] 
+                if tag in registers:
+                    tagCode = registers[tag] 
+                else: 
+                    tagCode=0xFF
+                    errorCounter += 1
+                    printError(lineNumber, "Register not recognized")
+            else: 
+                errorCounter += 1
+                printError(lineNumber, "\"{}\" operation not recognized.".format(operation))
+
+            
+            outputLines.append(operationCode)
+            outputLines.append(tagCode)
+            outputLines.append(0x00)
         
         # Read the next line
         lineNumber += 1
