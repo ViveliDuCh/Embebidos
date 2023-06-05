@@ -5,32 +5,33 @@ baseOpcodes = {
         "MOV"  : 0x08,
         "WRT"  : 0x10,
         "DIV"  : 0x18,
-        "MUL"  : 0x20,
-        "SUB"  : 0x30,
-        "NOT"  : 0x38,
-        "AND"  : 0x40,
-        "OR"   : 0x48,
-        "XOR"  : 0x50,
-        "JMP"  : 0x58,
-        "MOD"  : 0x60,
-        "EQU"  : 0x68,
-        "CMP"  : 0x70
+        "ADD"  : 0x20,
+        "MUL"  : 0x28,
+        "SUB"  : 0x38,
+        "NOT"  : 0x40,
+        "AND"  : 0x48,
+        "OR"   : 0x50,
+        "XOR"  : 0x58,
+        "JMP"  : 0x60,
+        "MOD"  : 0x68,
+        "EQU"  : 0x70,
+        "CMP"  : 0x78
         }
 
 baseOpcodes2 = {
-        "INC"  : 0x28,
+        "INC"  : 0x30,
 }
 
 jumpCodes = {
-        "JMP"  : 0x58,
-        "JE"   : 0x59,
-        "JL"   : 0x5a,
-        "JG"   : 0x5b,
-        "JC"   : 0x5c,
-        "JNZ"  : 0x5d,
-        "CALL" : 0x78,
-        "RET"  : 0x79,
-        "IRET" : 0x7a
+        "JMP"  : 0x60,
+        "JE"   : 0x61,
+        "JL"   : 0x62,
+        "JG"   : 0x63,
+        "JC"   : 0x64,
+        "JNZ"  : 0x65,
+        "CALL" : 0x80,
+        "RET"  : 0x81,
+        "IRET" : 0x82
         }
 
 opcodeOffsets = {
