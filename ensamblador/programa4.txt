@@ -1,32 +1,27 @@
-READ AX, EX     
-MOV  [101], AX        
-MOV  CX, #0               
-
+READ Ax, Ex     
+MOV  [101], Ax        
+MOV  Cx, #0               
 compara: 
-INC CX             
-CMP AX, #1     
+INC Cx             
+CMP Ax, #1     
 JE fin              
-MOV BX, AX    
-AND AX, #1      
-CMP AX, #0    
+MOV Bx, Ax    
+AND Ax, #1      
+CMP Ax, #0    
 JNZ impar     
 CALL compara
 JMP compara
-
 impar: 
 CALL tresmasuno 
 JMP compara 
-
 fin:     
 JMP fin
-
 divide: 
-MOV AX, BX 
-DIV AX, #2 
+MOV Ax, Bx 
+DIV Ax, #2 
 RET
-
 tresmasuno:
-MOV AX, BX 
-MUL AX, #3
-INC AX
+MOV Ax, Bx 
+MUL Ax, #3
+INC Ax
 RET

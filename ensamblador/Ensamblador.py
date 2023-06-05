@@ -186,8 +186,8 @@ CONTENT BEGIN
  
     
     
-input_file = 'ensamblador/programa3.txt'
-output_file = 'ensamblador/Memoria2.mif'
+input_file = 'ensamblador/programa4.txt'
+output_file = 'ensamblador/Memoria4.mif'
 outputLines = []
 tags = {}
 
